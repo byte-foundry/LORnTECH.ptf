@@ -3,13 +3,13 @@ exports.glyphs['D_cap'] =
 	glyphName: 'D'
 	characterName: 'LATIN CAPITAL LETTER D'
 	ot:
-		advanceWidth: contours[1].nodes[2].x + spacingRight
+		advanceWidth: contours[1].nodes[2].expandedTo[0].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 70 * spacing
-		spacingRight: 50 * spacing
+		spacingLeft: 50 * spacing + 90
+		spacingRight: 50 * spacing + 30
 	tags: [
 		'all',
 		'latin',
@@ -25,7 +25,7 @@ exports.glyphs['D_cap'] =
 					y: 0
 					typeOut: 'line'
 					expand: Object({
-						width: thickness
+						width: 81/80 * thickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
@@ -34,7 +34,7 @@ exports.glyphs['D_cap'] =
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
-						width: thickness
+						width: 81/80 * thickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
@@ -52,7 +52,7 @@ exports.glyphs['D_cap'] =
 						distr: 0
 					})
 				1:
-					x: contours[0].nodes[0].expandedTo[1].x + 90
+					x: contours[0].nodes[0].expandedTo[1].x + 126 * width + 17
 					y: capHeight
 					dirOut: 0 + 'deg'
 					expand: Object({
@@ -61,20 +61,20 @@ exports.glyphs['D_cap'] =
 						distr: 0
 					})
 				2:
-					x: contours[1].nodes[1].x + 200 + 200 * width - 0.25 * contours[0].nodes[1].expand.width - 60
+					x: contours[1].nodes[1].x + 348 - 0.25 * 92/80 * thickness * opticThickness * 0.75
 					y: contours[0].nodes[1].y - (contours[0].nodes[1].y / 2)
 					dirOut: 270 + 'deg'
 					expand: Object({
-						width: 85 / 80 * thickness * opticThickness
+						width: 92 / 80 * thickness * opticThickness
 						angle: 180 + 'deg'
 						distr: 0.25
 					})
 				3:
-					x: contours[0].nodes[0].expandedTo[1].x + 90
+					x: contours[0].nodes[0].expandedTo[1].x + 126 * width + 17
 					y: 0
 					dirOut: 270 + 'deg'
 					expand: Object({
-						width: 85 / 80 * thickness * opticThickness * contrast
+						width: thickness * opticThickness * contrast
 						angle: 90 + 'deg'
 						distr: 0
 					})
@@ -83,7 +83,7 @@ exports.glyphs['D_cap'] =
 					y: 0
 					dirOut: 270 + 'deg'
 					expand: Object({
-						width: 85 / 80 * thickness * opticThickness * contrast
+						width: thickness * opticThickness * contrast
 						angle: 90 + 'deg'
 						distr: 0
 					})

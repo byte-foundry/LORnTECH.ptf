@@ -8,8 +8,8 @@ exports.glyphs['F_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 70 * spacing
-		spacingRight: 50 * spacing
+		spacingLeft: 50 * spacing + 90
+		spacingRight: 50 * spacing + 39
 	tags: [
 		'all',
 		'latin',
@@ -21,11 +21,11 @@ exports.glyphs['F_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft + 0.25 * (88 / 80 *thickness * opticThickness)
+					x: spacingLeft + 0.25 * (81 / 80 *thickness * opticThickness)
 					y: 0
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 *thickness * opticThickness)
+						width: (81 / 80 *thickness * opticThickness)
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
@@ -34,7 +34,7 @@ exports.glyphs['F_cap'] =
 					y: capHeight
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 *thickness * opticThickness)
+						width: (81 / 80 *thickness * opticThickness)
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
@@ -52,7 +52,7 @@ exports.glyphs['F_cap'] =
 						distr: 0
 					})
 				1:
-					x: contours[1].nodes[0].expandedTo[1].x + 100 + 200 * width
+					x: contours[1].nodes[0].expandedTo[1].x + 107 + 200 * width
 					y: contours[0].nodes[1].y
 					typeOut: 'line'
 					expand: Object({
@@ -66,7 +66,7 @@ exports.glyphs['F_cap'] =
 			nodes:
 				0:
 					x: contours[0].nodes[0].expandedTo[1].x
-					y: capHeight / 2
+					y: capHeight / 1.9
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * opticThickness * contrast
@@ -74,8 +74,8 @@ exports.glyphs['F_cap'] =
 						distr: 0.5
 					})
 				1:
-					x: contours[1].nodes[1].x - 35 * width
-					y: capHeight / 2
+					x: contours[1].nodes[1].x - 25 - 12 * (width - 1)
+					y: capHeight / 1.9
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * opticThickness * contrast
