@@ -8,8 +8,8 @@ exports.glyphs['S_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 40 * spacing
-		spacingRight: 50 * spacing
+		spacingLeft: 50 * spacing + 60
+		spacingRight: 50 * spacing + 60
 
 	tags: [
 		'all',
@@ -26,7 +26,7 @@ exports.glyphs['S_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft + thickness * 0.25
+					x: contours[0].nodes[4].expandedTo[1].x + 17
 					y: contours[0].nodes[1].y + 40
 					dirOut: Utils.lineAngle( contours[0].nodes[1].point, contours[0].nodes[0].point ) - 10 / 180 * Math.PI  - contours[0].nodes[0].expand.width / 80 * Math.PI / 6
 					expand: Object({
@@ -35,7 +35,7 @@ exports.glyphs['S_cap'] =
 						distr: 0
 					})
 				1:
-					x: contours[0].nodes[0].expandedTo[0].x + 140 + 200 * width / 2
+					x: (contours[0].nodes[0].x * 0.46 + contours[0].nodes[2].expandedTo[1].x * 0.54)
 					y: 0
 					dirOut: 0 + 'deg'
 					expand: Object({
@@ -44,12 +44,12 @@ exports.glyphs['S_cap'] =
 						distr: 0
 					})
 				2:
-					x: contours[0].nodes[1].x + 140 + 200 * width / 2 - thickness * 0.25
+					x: contours[0].nodes[4].expandedTo[1].x + 204 + 200 * width - 0.25 * contours[0].nodes[2].expand.width
 					y: capHeight / 4 + (thickness / 80 - 1) * 20 + 5 * (width - 1)
 					dirIn: 90 + 'deg'
 					expand: Object({
-						width: thickness * opticThickness + Math.max(0, (width - 1) * 20 * (thickness / 80 - 1))
-						angle: 180 + 'deg'
+						width: 86/80 * thickness * opticThickness / Math.cos(1 / 180 * Math.PI) + Math.max(0, (width - 1) * 20 * (thickness / 80 - 1))
+						angle: 181 + 'deg'
 						distr: 0.25
 					})
 				3:
@@ -63,12 +63,12 @@ exports.glyphs['S_cap'] =
 						distr: 0.5
 					})
 				4:
-					x: contours[0].nodes[0].x
+					x: spacingLeft + 0.25 * contours[0].nodes[4].expand.width
 					y: capHeight / 4 * 3 - (thickness / 80 - 1) * 20 - 5 * (width - 1)
 					dirOut: 90 + 'deg'
 					expand: Object({
-						width: thickness * opticThickness + Math.max(0, (width - 1) * 20 * (thickness / 80 - 1))
-						angle: 180 + 'deg'
+						width: 82/80 * thickness * opticThickness / Math.cos(1 / 180 * Math.PI) + Math.max(0, (width - 1) * 20 * (thickness / 80 - 1))
+						angle: 181 + 'deg'
 						distr: 0.75
 					})
 				5:
@@ -81,7 +81,7 @@ exports.glyphs['S_cap'] =
 						distr: 1
 					})
 				6:
-					x: contours[0].nodes[2].x
+					x: contours[0].nodes[2].expandedTo[0].x - 54
 					y: contours[0].nodes[5].y - 40
 					dirIn: Utils.lineAngle( contours[0].nodes[5].point, contours[0].nodes[6].point ) - 10 / 180 * Math.PI - contours[0].nodes[0].expand.width / 80 * Math.PI / 6
 					expand: Object({

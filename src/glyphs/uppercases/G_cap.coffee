@@ -28,6 +28,7 @@ exports.glyphs['G_cap'] =
 					x: contours[0].nodes[1].expandedTo[1].x + ( contours[1].nodes[1].x - contours[0].nodes[1].expandedTo[1].x ) * (265/425)
 					y: -overshoot
 					dirOut: 180 + 'deg'
+					tensionOut: 0.95 + (thickness / 80 - 1) * 0.10
 					expand: Object({
 						width: 87/80 * thickness * opticThickness * contrast
 						angle: 90 + 'deg'
@@ -37,6 +38,8 @@ exports.glyphs['G_cap'] =
 					x: spacingLeft + 0.25 * contours[0].nodes[1].expand.width
 					y: capHeight / 2 + 1
 					dirOut: 90 + 'deg'
+					tensionOut: 0.95 + (thickness / 80 - 1) * 0.10
+					tensionIn: 0.95 + (thickness / 80 - 1) * 0.10
 					expand: Object({
 						width: 90 / 80 * thickness * opticThickness + (width - 1) * 15  * (thickness / 80 - 1)
 						angle: 0 + 'deg'
@@ -46,6 +49,7 @@ exports.glyphs['G_cap'] =
 					x: contours[0].nodes[0].x
 					y: capHeight + overshoot
 					dirOut: 0 + 'deg'
+					tensionIn: 0.95 + (thickness / 80 - 1) * 0.10
 					expand: Object({
 						width: 87/80 * thickness * opticThickness * contrast
 						angle: -90 + 'deg'
@@ -67,7 +71,7 @@ exports.glyphs['G_cap'] =
 				1:
 					x: 375 + 200 * width  + (thickness / 80 - 1) * width * 30
 					y: contours[1].nodes[0].y - 40
-					dirIn: Utils.lineAngle( contours[1].nodes[0].point, contours[1].nodes[1].point ) - 20 / 180 * Math.PI - contours[1].nodes[1].expand.width / 80 * Math.PI / 12
+					dirIn: Utils.lineAngle( contours[1].nodes[0].point, contours[1].nodes[1].point ) - 15 / 180 * Math.PI - Math.max(0, (1 - contrast) * Math.PI / 4)
 					expand: Object({
 						width:
 							if contrast < 1
@@ -92,7 +96,8 @@ exports.glyphs['G_cap'] =
 				1:
 					x: 439 + 200 * width + (thickness / 80 - 1) * width * 30
 					y: contours[2].nodes[0].y + 65
-					dirIn: Utils.lineAngle( contours[2].nodes[0].point, contours[2].nodes[1].point ) + 20 / 180 * Math.PI + contours[1].nodes[1].expand.width / 80 * Math.PI / 12
+					dirIn: Utils.lineAngle( contours[2].nodes[0].point, contours[2].nodes[1].point ) + 19 / 180 * Math.PI + Math.max(0, (-contrast + 1) * Math.PI / 4)
+					tensionIn: 0.85
 					expand: Object({
 						width:
 							if contrast < 1
@@ -116,7 +121,7 @@ exports.glyphs['G_cap'] =
 					})
 				1:
 					x: contours[2].nodes[1].x
-					y: contours[0].nodes[1].y
+					y: capHeight * 330 / 700
 					typeOut: 'line'
 					expand: Object({
 						width: thickness * opticThickness

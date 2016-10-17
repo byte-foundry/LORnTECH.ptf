@@ -8,8 +8,8 @@ exports.glyphs['J'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 70 * spacing
-		spacingRight: 70 * spacing
+		spacingLeft: 50 * spacing + 105
+		spacingRight: 50 * spacing + 105
 	tags: [
 		'all',
 		'latin',
@@ -25,39 +25,32 @@ exports.glyphs['J'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft + 0.25 * thickness + 25 * width
+					x: spacingLeft + 0.25 * 81/80 * thickness * opticThickness
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
-						width: ( 90 / 80 ) * thickness * opticThickness
+						width: ( 81 / 80 ) * thickness * opticThickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
 				1:
 					x: contours[0].nodes[0].x
-					y: 40 + (30 / 80) * thickness * opticThickness
+					y: 74/700 * capHeight + 0.25 * ( 81 / 80 ) * thickness * opticThickness * Math.sin(6 / 180 * Math.PI)
 					dirOut: - 90 + 'deg'
+					tensionOut: 1.1
 					expand: Object({
-						width: ( 95 / 80 ) * thickness * opticThickness
-						angle: (29 - 10 * (thickness * opticThickness / 80)) + 'deg'
+						width: ( 81 / 80 ) * thickness * opticThickness * Math.cos(6 / 180 * Math.PI)
+						angle: 6 + 'deg'
 						distr: 0.25
 					})
 				2:
-					x:  contours[0].nodes[3].x + (contours[0].nodes[0].expandedTo[0].x - contours[0].nodes[3].x) * 0.5
-					y: contours[0].nodes[1].y - 270 - (50 / 80) * thickness * opticThickness
-					dirOut: 180 + 'deg'
+					x: contours[0].nodes[0].x - 58
+					y: -120
+					dirIn: 50 + 'deg'
+					tensionIn: 1.1
 					type: 'smooth'
 					expand: Object({
-						width: thickness * opticThickness * contrast
-						angle: - 90 + 'deg'
-						distr: 1
-					})
-				3:
-					x:  - 205 - 175 * width
-					y: contours[0].nodes[2].y + 50
-					dirIn: - 30 - (80 / contours[0].nodes[2].expand.width) * 7 + 'deg'
-					expand: Object({
-						width: ( 90 / 80 ) * thickness * opticThickness
-						angle: - 90 + 'deg'
-						distr: 1
+						width: 87/80 * thickness * opticThickness * contrast
+						angle: 0 + 'deg'
+						distr: 0.25
 					})

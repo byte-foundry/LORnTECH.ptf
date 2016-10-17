@@ -8,8 +8,8 @@ exports.glyphs['H_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 70 * spacing
-		spacingRight: 70 * spacing
+		spacingLeft: 50 * spacing + 90
+		spacingRight: 50 * spacing + 90
 	tags: [
 		'all',
 		'latin',
@@ -25,11 +25,11 @@ exports.glyphs['H_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft + 0.25 * (88 / 80 *thickness * opticThickness)
+					x: spacingLeft
 					y: 0
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 *thickness * opticThickness)
+						width: (81 / 80 *thickness * opticThickness)
 						angle: 0 + 'deg'
 						distr: 0.1
 					})
@@ -38,7 +38,7 @@ exports.glyphs['H_cap'] =
 					y: capHeight
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 *thickness * opticThickness)
+						width: (81 / 80 *thickness * opticThickness)
 						angle: 0 + 'deg'
 						distr: 0.1
 					})
@@ -47,11 +47,11 @@ exports.glyphs['H_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[0].x + ( 280 + 200 * width + (88 / 80 *thickness * opticThickness) * 0.25 )
+					x: contours[0].nodes[0].expandedTo[0].x + 328 + 200 * width - 0.1 * 81/80 * thickness * opticThickness + (thickness - 80) *  0.5
 					y: 0
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 *thickness * opticThickness)
+						width: (81 / 80 *thickness * opticThickness)
 						angle: 0 + 'deg'
 						distr: 0.9
 					})
@@ -60,7 +60,7 @@ exports.glyphs['H_cap'] =
 					y: capHeight
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 *thickness * opticThickness)
+						width: (81 / 80 *thickness * opticThickness)
 						angle: 0 + 'deg'
 						distr: 0.9
 					})
@@ -70,7 +70,7 @@ exports.glyphs['H_cap'] =
 			nodes:
 				0:
 					x: contours[0].nodes[0].x
-					y: capHeight * 0.5
+					y: capHeight * 0.53
 					typeOut: "line"
 					expand: Object({
 						width: thickness * opticThickness * contrast
@@ -79,7 +79,7 @@ exports.glyphs['H_cap'] =
 					})
 				1:
 					x: contours[1].nodes[0].x
-					y: capHeight * 0.5
+					y: capHeight * 0.53
 					typeOut: "line"
 					expand: Object({
 						width: thickness * opticThickness * contrast

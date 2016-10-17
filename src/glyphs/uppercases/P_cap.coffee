@@ -8,8 +8,8 @@ exports.glyphs['P_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 70 * spacing
-		spacingRight: 50 * spacing
+		spacingLeft: 50 * spacing + 90
+		spacingRight: 50 * spacing + 60
 	tags: [
 		'all',
 		'latin',
@@ -25,7 +25,7 @@ exports.glyphs['P_cap'] =
 					y: 0
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * opticThickness
+						width: 81/80 * thickness * opticThickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
@@ -34,7 +34,7 @@ exports.glyphs['P_cap'] =
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * opticThickness
+						width: 81/80 * thickness * opticThickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
@@ -47,43 +47,46 @@ exports.glyphs['P_cap'] =
 					y: capHeight
 					dirOut: 0 + 'deg'
 					expand: Object({
-						width: thickness * opticThickness * contrast
+						width: 81/80 * thickness * opticThickness * contrast
 						angle: -90 + 'deg'
 						distr: 0
 					})
 				1:
-					x: contours[0].nodes[0].expandedTo[1].x + 70
+					x: contours[1].nodes[2].expandedTo[1].x - 141
 					y: capHeight
 					dirOut: 0 + 'deg'
 					expand: Object({
-						width: thickness * opticThickness * contrast
-						angle: -90 + 'deg'
+						width: 81/80 * thickness * opticThickness * contrast
+						angle: -95 + 'deg'
 						distr: 0
 					})
 				2:
-					x: contours[1].nodes[1].x + 200 + 200 * width - 0.25 * contours[0].nodes[1].expand.width - 170
-					y: contours[0].nodes[1].y - (contours[0].nodes[1].y / 4) - 25
+					x: contours[0].nodes[1].expandedTo[0].x + 235 + 200 * width - 0.25 * contours[0].nodes[1].expand.width
+					y: (contours[1].nodes[0].expandedTo[0].y + contours[1].nodes[4].expandedTo[0].y) / 2 - Math.sin(5 / 180 * Math.PI) * 82 / 80 * thickness * opticThickness / Math.cos(5 / 180 * Math.PI) * 0.25
 					dirOut: 270 + 'deg'
+					dirIn: 270 + 'deg'
+					tensionOut: 1.1
 					expand: Object({
-						width: 85 / 80 * thickness * opticThickness
-						angle: 180 + 'deg'
+						width: 82 / 80 * thickness * opticThickness / Math.cos(5 / 180 * Math.PI)
+						angle: 185 + 'deg'
 						distr: 0.25
 					})
 				3:
-					x: contours[0].nodes[0].expandedTo[1].x + 70
-					y: contours[0].nodes[1].y - (contours[0].nodes[1].y / 2) - 25
-					dirOut: 270 + 'deg'
+					x: contours[1].nodes[2].expandedTo[1].x - 143 - Math.sin(9 / 180 * Math.PI) * 80 / 80 * thickness * opticThickness * contrast / Math.cos(9 / 180 * Math.PI) * 0.25
+					y: contours[1].nodes[4].y
+					dirIn: 0 + 'deg'
+					tensionIn: 1.1
 					expand: Object({
-						width: 85 / 80 * thickness * opticThickness * contrast
-						angle: 90 + 'deg'
+						width: 80 / 80 * thickness * opticThickness * contrast / Math.cos(9 / 180 * Math.PI)
+						angle: 99 + 'deg'
 						distr: 0.25
 					})
 				4:
 					x: contours[0].nodes[0].x
-					y: contours[0].nodes[1].y - (contours[0].nodes[1].y / 2) - 25
+					y: 290
 					dirOut: 270 + 'deg'
 					expand: Object({
-						width: 85 / 80 * thickness * opticThickness * contrast
+						width: 80 / 80 * thickness * opticThickness * contrast
 						angle: 90 + 'deg'
 						distr: 0.25
 					})

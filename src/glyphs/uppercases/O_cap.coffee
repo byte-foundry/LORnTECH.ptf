@@ -8,8 +8,8 @@ exports.glyphs['O_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 30 * spacing
-		spacingRight: 30 * spacing
+		spacingLeft: 50 * spacing + 60
+		spacingRight: 50 * spacing + 60
 	tags: [
 		'all',
 		'latin',
@@ -30,8 +30,10 @@ exports.glyphs['O_cap'] =
 					x: (contours[0].nodes[1].x + contours[0].nodes[3].x) / 2
 					y: - overshoot
 					dirOut: 180 + 'deg'
+					tensionOut: 0.96
+					tensionIn: 0.96
 					expand: Object({
-						width: thickness * opticThickness
+						width: 83/80 * thickness * opticThickness
 						angle: 90 + 'deg'
 						distr: 0
 					})
@@ -39,6 +41,8 @@ exports.glyphs['O_cap'] =
 					x: spacingLeft + 0.25 * contours[0].nodes[1].expand.width
 					y: capHeight / 2
 					dirOut: 90 + 'deg'
+					tensionOut: 0.96
+					tensionIn: 0.96
 					expand: Object({
 						width: 90 / 80 * thickness * opticThickness * contrast + (width - 1) * 15  * (thickness / 80 - 1)
 						angle: 0 + 'deg'
@@ -48,15 +52,19 @@ exports.glyphs['O_cap'] =
 					x: contours[0].nodes[0].x
 					y: capHeight + overshoot
 					dirOut: 0 + 'deg'
+					tensionOut: 0.96
+					tensionIn: 0.96
 					expand: Object({
-						width: thickness * opticThickness
+						width: 84/80 * thickness * opticThickness
 						angle: -90 + 'deg'
 						distr: 0
 					})
 				3:
-					x: contours[0].nodes[1].x + 500 + 200 * width - 0.25 * contours[0].nodes[1].expand.width
+					x: contours[0].nodes[1].expandedTo[0].x + 509 + 200 * width - 0.25 * contours[0].nodes[1].expand.width
 					y: contours[0].nodes[1].y
 					dirOut: 270 + 'deg'
+					tensionOut: 0.96
+					tensionIn: 0.96
 					expand: Object({
 						width: 90 / 80 * thickness * opticThickness * contrast  + (width - 1) * 15  * (thickness / 80 - 1)
 						angle: 180 + 'deg'

@@ -8,8 +8,8 @@ exports.glyphs['I_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 80 * spacing
-		spacingRight: 80 * spacing
+		spacingLeft: 50 * spacing + 100
+		spacingRight: 50 * spacing + 100
 	tags: [
 		'all',
 		'latin',
@@ -29,7 +29,7 @@ exports.glyphs['I_cap'] =
 					y: 0
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 *thickness * opticThickness)
+						width: (81 / 80 *thickness * opticThickness)
 						angle: 0 + 'deg'
 						distr: 0.5
 					})
@@ -38,7 +38,7 @@ exports.glyphs['I_cap'] =
 					y: capHeight
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 *thickness * opticThickness)
+						width: (81 / 80 *thickness * opticThickness)
 						angle: 0 + 'deg'
 						distr: 0.5
 					})
