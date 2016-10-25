@@ -11,7 +11,57 @@ exports.controls = [
 		init: 0
 		minAdvised: 0
 		maxAdvised: 1.1
-		disabled: true
+		disabled: false
+	,
+		name: 'diacriticHeight'
+		label: 'Diacritic Position'
+		min: -5
+		max: 150
+		step: 1
+		init: 80
+		minAdvised: 75
+		maxAdvised: 90
+		disabled: false
+	,
+		name: 'opticThickness'
+		label: 'Capital thickness'
+		min: 0.7
+		max: 1.3
+		step: 0.01
+		init: 0.95
+		minAdvised: 0.9
+		maxAdvised: 1.1
+		disabled: false
+	,
+		name: 'smallCapDelta'
+		label: 'SC Height'
+		min: 0
+		max: 2.5
+		step: 0.01
+		init: 1
+		minAdvised: 0
+		maxAdvised: 1.5
+		disabled: false
+	,
+		name: '_scThickness'
+		label: 'SC Thickness'
+		min: 0.5
+		max: 1.5
+		step: 0.05
+		init: 0.9
+		minAdvised: 0.85
+		maxAdvised: 1
+		disabled: false
+	,
+		name: '_scWidth'
+		label: 'SC Width'
+		min: 0.5
+		max: 1.5
+		step: 0.05
+		init: 0.7
+		minAdvised: 0.65
+		maxAdvised: 0.75
+		disabled: false
 	]
 ,
 	tab: true
@@ -23,9 +73,20 @@ exports.controls = [
 		min: 300
 		max: 900
 		step: 1
-		init: 520
+		init: 500
 		minAdvised: 300
 		maxAdvised: 800
+		disabled: false
+		demo: true
+	,
+		name: 'baseLine'
+		label: 'Base line'
+		min: 0
+		max: 400
+		step: 1
+		init: 0
+		minAdvised: 0
+		maxAdvised: 350
 		disabled: false
 		demo: true
 	,
@@ -56,7 +117,7 @@ exports.controls = [
 		min: 50
 		max: 800
 		step: 1
-		init: 230
+		init: 300
 		minAdvised: 50
 		maxAdvised: 500
 		disabled: false
@@ -67,7 +128,7 @@ exports.controls = [
 		min: -850
 		max: -50
 		step: 1
-		init: -250
+		init: -300
 		minAdvised: -350
 		maxAdvised: -100
 		disabled: false
@@ -125,11 +186,11 @@ exports.controls = [
 		name: 'thickness'
 		label: 'Thickness'
 		min: 4
-		max: 180
+		max: 200
 		step: 1
-		init: 115
-		minAdvised: 60
-		maxAdvised: 130
+		init: 80
+		minAdvised: 40
+		maxAdvised: 150
 		disabled: false
 		demo: true
 	,

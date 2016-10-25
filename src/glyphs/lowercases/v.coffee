@@ -3,13 +3,14 @@ exports.glyphs['v'] =
 	glyphName: 'v'
 	characterName: 'LATIN SMALL LETTER V'
 	ot:
-		advanceWidth: 0 + spacingRight
+		advanceWidth: contours[1].nodes[1].expandedTo[1].x + spacingRight
 	transforms: Array(
-		['skewX', slant + 'deg']
+		['skewX', slant + 'deg'],
+		['translateY', baseLine]
 	)
 	parameters:
-		spacingLeft: 50 * spacing + 0
-		spacingRight: 50 * spacing + 0
+		spacingLeft: 20 * spacing
+		spacingRight: 20 * spacing
 	tags: [
 		'all',
 		'latin',
@@ -21,11 +22,42 @@ exports.glyphs['v'] =
 			closed: false
 			nodes:
 				0:
-					x: 0
-					y: 0
-					dirOut: 0 + 'deg'
+					x: spacingLeft + 0.25 * thickness
+					y: xHeight
+					typeOut: 'line'
 					expand: Object({
-						width: 0
+						width: thickness
 						angle: 0 + 'deg'
 						distr: 0.25
+					})
+				1:
+					x: contours[0].nodes[0].x + 160
+					y: 0
+					typeOut: 'line'
+					expand: Object({
+						width: thickness
+						angle: 0 + 'deg'
+						distr: 0.25
+					})
+		1:
+			skeleton: true
+			closed: false
+			nodes:
+				0:
+					x: contours[0].nodes[1].expandedTo[1].x
+					y: 0
+					typeOut: 'line'
+					expand: Object({
+						width: thickness
+						angle: 0 + 'deg'
+						distr: 0.5
+					})
+				1:
+					x: contours[1].nodes[0].x + 160
+					y: xHeight
+					typeOut: 'line'
+					expand: Object({
+						width: thickness
+						angle: 0 + 'deg'
+						distr: 0.5
 					})
