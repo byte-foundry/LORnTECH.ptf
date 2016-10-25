@@ -45,7 +45,7 @@ exports.glyphs['b'] =
 				0:
 					x: contours[0].nodes[0].expandedTo[0].x + ( contours[0].nodes[0].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) * 0.75
 					y: xHeight - 145 - (20)
-					dirOut: 60 + 'deg'
+					dirOut: 65 + 'deg'
 					expand: Object({
 						width: ( 120 / 80 ) * thickness
 						angle: 90 + 'deg'

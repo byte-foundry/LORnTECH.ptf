@@ -9,8 +9,8 @@ exports.glyphs['q'] =
 		['translateY', baseLine]
 	)
 	parameters:
-		spacingLeft: 40 * spacing
-		spacingRight: 70 * spacing
+		spacingLeft: 50 * spacing + 55
+		spacingRight: 50 * spacing + 80
 	tags: [
 		'all',
 		'latin',
@@ -22,16 +22,10 @@ exports.glyphs['q'] =
 			closed: false
 			nodes:
 				0:
-					x: 210 + 210 * width
-					y: xHeight - 100
-					dirOut: Utils.lineAngle( contours[0].nodes[0].point, contours[0].nodes[1].point ) - 20 / 180 * Math.PI
-					expand: Object({
-						width: thickness
-						angle: - 90 + 'deg'
-						distr: 0.1
-					})
-				1:
-					x: contours[0].nodes[2].expandedTo[1].x + ( contours[0].nodes[0].x - contours[0].nodes[2].expandedTo[1].x ) * (150/310)
+					x: Math.min(
+						contours[0].nodes[2].x + ( contours[0].nodes[3].x - contours[0].nodes[2].x ) * 0.55,
+						contours[1].nodes[0].expandedTo[1].x - 20
+					)
 					y: xHeight + overshoot
 					dirOut: 0 + 'deg'
 					expand: Object({
@@ -39,31 +33,31 @@ exports.glyphs['q'] =
 						angle: - 90 + 'deg'
 						distr: 0
 					})
-				2:
-					x: spacingLeft + 0.25 * thickness
-					y: xHeight - 230
+				1:
+					x: spacingLeft + (20/80) * thickness
+					y: ( 200 / 500 ) * xHeight
 					type: 'smooth'
 					dirOut: - 90 + 'deg'
 					expand: Object({
-						width: thickness
-						angle: 0 + 'deg'
-						distr: 0.5
+						width: ( 85 / 80 ) * thickness
+						angle: 5 + 'deg'
+						distr: 0.25
 					})
-				3:
-					x: contours[0].nodes[2].expandedTo[1].x + ( contours[0].nodes[0].x - contours[0].nodes[2].expandedTo[1].x ) * (150/310)
-					y: 0 - overshoot
+				2:
+					x: contours[0].nodes[1].expandedTo[0].x + ( contours[0].nodes[3].x - contours[0].nodes[1].expandedTo[0].x ) * ( 170 / 370)
+					y: 0 - overshoot / 2
 					dirOut: 0 + 'deg'
 					expand: Object({
 						width: thickness
 						angle: 90 + 'deg'
 						distr: 0
 					})
-				4:
-					x: contours[0].nodes[0].x + 10
-					y: 70
-					dirIn: Utils.lineAngle( contours[0].nodes[3].point, contours[0].nodes[4].point ) + 20 / 180 * Math.PI
+				3:
+					x: contours[1].nodes[0].expandedTo[0].x + ( contours[1].nodes[0].expandedTo[1].x - contours[1].nodes[0].expandedTo[0].x ) * 0.25
+					y: 155 + (8)
+					dirIn: - 115 + 'deg'
 					expand: Object({
-						width: thickness
+						width: ( 120 / 80 ) * thickness
 						angle: 90 + 'deg'
 						distr: 0.1
 					})
@@ -72,7 +66,10 @@ exports.glyphs['q'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[0].x + 0.25 * thickness
+					x: Math.max(
+						contours[0].nodes[1].expandedTo[0].x + 200 * width + 255 - (23),
+						contours[0].nodes[1].expandedTo[1].x + 0.25 * thickness + 10
+					)
 					y: xHeight
 					typeOut: 'line'
 					expand: Object({

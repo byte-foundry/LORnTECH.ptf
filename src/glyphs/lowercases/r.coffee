@@ -9,8 +9,8 @@ exports.glyphs['r'] =
 		['translateY', baseLine]
 	)
 	parameters:
-		spacingLeft: 70 * spacing
-		spacingRight: 40 * spacing
+		spacingLeft: 50 * spacing + 70
+		spacingRight: 50 * spacing + 40
 	tags: [
 		'all',
 		'latin',
@@ -26,7 +26,7 @@ exports.glyphs['r'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft + 0.25 * thickness
+					x: spacingLeft + (20/80) * thickness
 					y: 0
 					typeOut: 'line'
 					expand: Object({
