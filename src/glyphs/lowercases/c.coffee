@@ -9,8 +9,8 @@ exports.glyphs['c'] =
 		['translateY', baseLine]
 	)
 	parameters:
-		spacingLeft: 40 * spacing
-		spacingRight: 30 * spacing
+		spacingLeft: 50 * spacing + 60
+		spacingRight: 50 * spacing + 60
 	tags: [
 		'all',
 		'latin',
@@ -26,16 +26,19 @@ exports.glyphs['c'] =
 			closed: false
 			nodes:
 				0:
-					x: 220 + 200 * width
-					y: xHeight - 50
-					dirOut: Utils.lineAngle( contours[0].nodes[0].point, contours[0].nodes[1].point ) - 20 / 180 * Math.PI
+					x: Math.max(
+						contours[0].nodes[2].expandedTo[0].x + 200 * width + 190,
+						contours[0].nodes[2].expandedTo[1].x + 10 + (0)
+					)
+					y: xHeight - 25 - (10)
+					dirOut: 150 + 'deg'
 					expand: Object({
 						width: thickness
 						angle: - 90 + 'deg'
 						distr: 0.1
 					})
 				1:
-					x: contours[0].nodes[2].expandedTo[1].x + ( contours[0].nodes[0].x - contours[0].nodes[2].expandedTo[1].x ) * (150/310)
+					x: contours[0].nodes[2].expandedTo[0].x + ( contours[0].nodes[0].x - contours[0].nodes[2].expandedTo[0].x ) * ( 235 / 390 )
 					y: xHeight + overshoot
 					dirOut: 0 + 'deg'
 					expand: Object({
@@ -44,17 +47,17 @@ exports.glyphs['c'] =
 						distr: 0
 					})
 				2:
-					x: spacingLeft + 0.25 * thickness
+					x: spacingLeft + (20)
 					y: xHeight / 2
 					type: 'smooth'
 					dirOut: - 90 + 'deg'
 					expand: Object({
-						width: thickness + (width - 1) * 20  * (thickness / 80 - 1)
+						width: thickness
 						angle: 0 + 'deg'
-						distr: 0.5
+						distr: 0.25
 					})
 				3:
-					x: contours[0].nodes[2].expandedTo[1].x + ( contours[0].nodes[0].x - contours[0].nodes[2].expandedTo[1].x ) * (150/310)
+					x: contours[0].nodes[1].x
 					y: 0 - overshoot
 					dirOut: 0 + 'deg'
 					expand: Object({
@@ -64,7 +67,7 @@ exports.glyphs['c'] =
 					})
 				4:
 					x: contours[0].nodes[0].x + 10
-					y: 50
+					y: 40 + (10)
 					dirIn: Utils.lineAngle( contours[0].nodes[3].point, contours[0].nodes[4].point ) + 20 / 180 * Math.PI
 					expand: Object({
 						width: thickness

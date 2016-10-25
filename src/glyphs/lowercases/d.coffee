@@ -8,8 +8,8 @@ exports.glyphs['d'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 50 * spacing
-		spacingRight: 50 * spacing
+		spacingLeft: 50 * spacing + 40
+		spacingRight: 50 * spacing + 70
 	tags: [
 		'all',
 		'latin',
@@ -23,7 +23,7 @@ exports.glyphs['d'] =
 				0:
 					x: 210 + 210 * width
 					y: xHeight - 100
-					dirOut: Utils.lineAngle( contours[0].nodes[0].point, contours[0].nodes[1].point ) - 20 / 180 * Math.PI 
+					dirOut: Utils.lineAngle( contours[0].nodes[0].point, contours[0].nodes[1].point ) - 20 / 180 * Math.PI
 					expand: Object({
 						width: thickness
 						angle: - 90 + 'deg'
@@ -39,7 +39,7 @@ exports.glyphs['d'] =
 						distr: 0
 					})
 				2:
-					x: spacingLeft + 0.25 * thickness
+					x: spacingLeft + (20)
 					y: xHeight - 230
 					type: 'smooth'
 					dirOut: - 90 + 'deg'
@@ -50,7 +50,7 @@ exports.glyphs['d'] =
 					})
 				3:
 					x: contours[0].nodes[2].expandedTo[1].x + ( contours[0].nodes[0].x - contours[0].nodes[2].expandedTo[1].x ) * (150/310)
-					y: 0 - overshoot
+					y: 0 - overshoot / 2
 					dirOut: 0 + 'deg'
 					expand: Object({
 						width: thickness
@@ -60,7 +60,7 @@ exports.glyphs['d'] =
 				4:
 					x: contours[0].nodes[0].x + 10
 					y: 70
-					dirIn: Utils.lineAngle( contours[0].nodes[3].point, contours[0].nodes[4].point ) + 20 / 180 * Math.PI 
+					dirIn: Utils.lineAngle( contours[0].nodes[3].point, contours[0].nodes[4].point ) + 20 / 180 * Math.PI
 					expand: Object({
 						width: thickness
 						angle: 90 + 'deg'
