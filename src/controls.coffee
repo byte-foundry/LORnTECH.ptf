@@ -16,11 +16,11 @@ exports.controls = [
 		name: 'diacriticHeight'
 		label: 'Diacritic Position'
 		min: -5
-		max: 150
+		max: 180
 		step: 1
-		init: 80
-		minAdvised: 75
-		maxAdvised: 90
+		init: 135
+		minAdvised: 120
+		maxAdvised: 150
 		disabled: false
 	,
 		name: 'opticThickness'
@@ -186,11 +186,11 @@ exports.controls = [
 		name: 'thickness'
 		label: 'Thickness'
 		min: 4
-		max: 200
+		max: 160
 		step: 1
 		init: 80
 		minAdvised: 40
-		maxAdvised: 150
+		maxAdvised: 120
 		disabled: false
 		demo: true
 	,

@@ -9,8 +9,8 @@ exports.glyphs['o'] =
 		['translateY', baseLine]
 	)
 	parameters:
-		spacingLeft: 30 * spacing
-		spacingRight: 30 * spacing
+		spacingLeft: 50 * spacing + 50
+		spacingRight: 50 * spacing + 50
 	tags: [
 		'all',
 		'latin',
@@ -29,7 +29,7 @@ exports.glyphs['o'] =
 			nodes:
 				0:
 					x: (contours[0].nodes[1].x + contours[0].nodes[3].x) / 2
-					y: - overshoot
+					y: - ( 15 / 10 ) * overshoot
 					dirOut: 180 + 'deg'
 					expand: Object({
 						width: thickness
@@ -37,29 +37,34 @@ exports.glyphs['o'] =
 						distr: 0
 					})
 				1:
-					x: spacingLeft + 0.25 * contours[0].nodes[1].expand.width
+					x: spacingLeft + (20/80) * thickness
 					y: xHeight / 2
 					dirOut: 90 + 'deg'
 					expand: Object({
-						width: 85 / 80 * thickness
+						width: thickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
 				2:
 					x: contours[0].nodes[0].x
-					y: xHeight + overshoot
+					y: xHeight + ( 20 / 10 ) * overshoot
 					dirOut: 0 + 'deg'
+					tensionIn: 1.1
+					tensionOut: 1.1
 					expand: Object({
 						width: thickness
 						angle: -90 + 'deg'
 						distr: 0
 					})
 				3:
-					x: 350 + 200 * width - 0.25 * contours[0].nodes[1].expand.width
+					x: Math.max(
+						contours[0].nodes[1].expandedTo[0].x + 200 * width + 290 - (17),
+						contours[0].nodes[1].expandedTo[1].x + 0.25 * thickness
+					)
 					y: contours[0].nodes[1].y
 					dirOut: 270 + 'deg'
 					expand: Object({
-						width: 85 / 80 * thickness
+						width: ( 75 / 80 ) * thickness
 						angle: 180 + 'deg'
 						distr: 0.25
 					})

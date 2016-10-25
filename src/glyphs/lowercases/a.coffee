@@ -35,7 +35,7 @@ exports.glyphs['a'] =
 						distr: 0.25
 					})
 				1:
-					x: spacingLeft - (29)
+					x: spacingLeft + (29/80) * thickness
 					y: 140 + (thickness / 80 - 1) * 15 + baseLine
 					tensionIn: 1.15
 					type: 'smooth'

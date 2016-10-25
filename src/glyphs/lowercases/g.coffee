@@ -9,8 +9,8 @@ exports.glyphs['g'] =
 		['translateY', baseLine],
 	)
 	parameters:
-		spacingLeft: 30 * spacing
-		spacingRight: 70 * spacing
+		spacingLeft: 50 * spacing + 40
+		spacingRight: 50 * spacing + 70
 	tags: [
 		'all',
 		'latin',
@@ -26,54 +26,44 @@ exports.glyphs['g'] =
 			closed: false
 			nodes:
 				0:
-					x: 220 + 200 * width
-					y: Math.min(
-						xHeight - 15 - 35 * ( thickness / 80 ),
-						xHeight - 50
+					x: Math.min(
+						contours[0].nodes[2].x + ( contours[0].nodes[3].x - contours[0].nodes[2].x ) * 0.55,
+						contours[1].nodes[0].expandedTo[1].x - 20
 					)
-					dirOut: Utils.lineAngle( contours[0].nodes[0].point, contours[0].nodes[1].point ) - 20 / 180 * Math.PI
-					expand: Object({
-						width: thickness
-						angle: - 90 + 'deg'
-						distr: 0.1
-					})
-				1:
-					x: contours[0].nodes[2].expandedTo[1].x + ( contours[0].nodes[0].x - contours[0].nodes[2].expandedTo[1].x ) * (150/310)
-					y: xHeight + overshoot
+					y: xHeight
 					dirOut: 0 + 'deg'
 					expand: Object({
 						width: thickness
 						angle: - 90 + 'deg'
 						distr: 0
 					})
-				2:
-					x: spacingLeft + 0.25 * thickness
-					y: xHeight / 2
+				1:
+					x: spacingLeft + (20/80) * thickness
+					y: ( 200 / 500 ) * xHeight
 					type: 'smooth'
 					dirOut: - 90 + 'deg'
+					tensionOut: 1.1
 					expand: Object({
-						width: thickness
-						angle: 0 + 'deg'
-						distr: 0.5
+						width: ( 85 / 80 ) * thickness
+						angle: 5 + 'deg'
+						distr: 0.25
 					})
-				3:
-					x: contours[0].nodes[2].expandedTo[1].x + ( contours[0].nodes[0].x - contours[0].nodes[2].expandedTo[1].x ) * (150/310)
-					y: 0 - overshoot
+				2:
+					x: contours[0].nodes[1].expandedTo[0].x + ( contours[0].nodes[3].x - contours[0].nodes[1].expandedTo[0].x ) * ( 170 / 370)
+					y: 0 - overshoot / 2
 					dirOut: 0 + 'deg'
+					tensionIn: 1.1
 					expand: Object({
 						width: thickness
 						angle: 90 + 'deg'
 						distr: 0
 					})
-				4:
-					x: contours[0].nodes[0].x + 10
-					y: Math.max(
-						15 + 35 * ( thickness / 80 ),
-						50
-					)
-					dirIn: Utils.lineAngle( contours[0].nodes[3].point, contours[0].nodes[4].point ) + 20 / 180 * Math.PI
+				3:
+					x: contours[1].nodes[0].expandedTo[0].x + ( contours[1].nodes[0].expandedTo[1].x - contours[1].nodes[0].expandedTo[0].x ) * 0.25
+					y: 155 + (8)
+					dirIn: - 115 + 'deg'
 					expand: Object({
-						width: thickness
+						width: ( 120 / 80 ) * thickness
 						angle: 90 + 'deg'
 						distr: 0.1
 					})
@@ -82,45 +72,46 @@ exports.glyphs['g'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[0].x
+					x: Math.max(
+						contours[0].nodes[1].expandedTo[0].x + 200 * width + 255 - (23),
+						contours[0].nodes[1].expandedTo[1].x + 0.25 * thickness + 10
+					)
 					y: xHeight
 					typeOut: 'line'
 					expand: Object({
 						width: thickness
 						angle: 0 + 'deg'
-						distr: 0.25
+						distr: 0.75
 					})
 				1:
-					x: contours[0].nodes[0].x
-					y: contours[0].nodes[4].y - Math.max(
-						60,
-						100 * ( thickness / 80 )
-					)
+					x: contours[1].nodes[0].expandedTo[0].x
+					y: - 30
 					dirOut: - 90 + 'deg'
-					tensionOut: 1.15
+					tensionOut: 0.9
 					expand: Object({
-						width: thickness
-						angle: 0 + 'deg'
-						distr: 0.25
+						width: ( 82 / 80 ) * thickness
+						angle: - 9 + 'deg'
+						distr: 0
 					})
 				2:
-					x: contours[0].nodes[1].x
 					x: contours[1].nodes[3].x + ( contours[1].nodes[1].expandedTo[1].x - contours[1].nodes[3].x ) * 0.5
 					y: descender
-					dirOut: 180 + 'deg'
+					dirIn: 0 + 'deg'
 					type: 'smooth'
+					tensionIn: 0.9
+					tensionOut: 1.5
 					expand: Object({
 						width: thickness
-						angle: 180 + 90 + 'deg'
+						angle: 180 + 95 + 'deg'
 						distr: 1
 					})
 				3:
-					x: contours[0].nodes[2].expandedTo[0].x + 20
-					y: descender * ( 230 / 300 )
-					dirIn: Utils.lineAngle( contours[1].nodes[3].point, contours[1].nodes[2].point ) - 20 / 180 * Math.PI
-					type: 'smooth'
+					x: contours[0].nodes[1].x
+					y: descender + 45 + (11)
+					dirIn: - 25 + 'deg'
+					tensionIn: 0
 					expand: Object({
-						width: thickness
+						width: ( 90 / 80 ) * thickness
 						angle: 180 + 90 + 'deg'
-						distr: 1
+						distr: 0.9
 					})

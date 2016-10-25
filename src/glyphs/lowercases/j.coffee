@@ -9,8 +9,8 @@ exports.glyphs['j'] =
 		['translateY', baseLine]
 	)
 	parameters:
-		spacingLeft: 60 * spacing
-		spacingRight: 60 * spacing
+		spacingLeft: 50 * spacing + 90
+		spacingRight: 50 * spacing + 90
 	tags: [
 		'all',
 		'latin',
@@ -22,7 +22,7 @@ exports.glyphs['j'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft + 0.5 * thickness
+					x: spacingLeft + (40/80) * thickness
 					y: descender
 					typeOut: 'line'
 					expand: Object({
@@ -45,21 +45,21 @@ exports.glyphs['j'] =
 			nodes:
 				0:
 					x: contours[0].nodes[0].x
-					y: xHeight + 80
+					y: xHeight + diacriticHeight
 					dirOut: 180 + 'deg'
 					type: 'smooth'
 				1:
-					x: contours[1].nodes[0].x - 1.1 * thickness / 2
-					y: contours[1].nodes[0].y + 1.1 * thickness / 2
+					x: contours[1].nodes[0].x - Math.max( 20, 1.25 * thickness / 2 )
+					y: contours[1].nodes[0].y + Math.max( 20, 1.25 * thickness / 2 )
 					dirOut: 90 + 'deg'
 					type: 'smooth'
 				2:
 					x: contours[1].nodes[0].x
-					y: contours[1].nodes[0].y + 1.1 * thickness
+					y: contours[1].nodes[0].y + Math.max( 40, 1.25 * thickness )
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 				3:
-					x: contours[1].nodes[1].x + 1.1 * thickness
+					x: contours[1].nodes[1].x + Math.max( 40, 1.25 * thickness )
 					y: contours[1].nodes[1].y
 					dirOut: 270 + 'deg'
 					type: 'smooth'

@@ -47,7 +47,7 @@ exports.glyphs['c'] =
 						distr: 0
 					})
 				2:
-					x: spacingLeft + (20)
+					x: spacingLeft + (20/80) * thickness
 					y: xHeight / 2
 					type: 'smooth'
 					dirOut: - 90 + 'deg'

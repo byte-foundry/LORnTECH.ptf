@@ -21,7 +21,7 @@ exports.glyphs['b'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft + (20)
+					x: spacingLeft + (20/80) * thickness
 					y: ascenderHeight
 					typeOut: 'line'
 					expand: Object({
