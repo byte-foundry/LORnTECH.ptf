@@ -3,7 +3,7 @@ exports.glyphs['z'] =
 	glyphName: 'z'
 	characterName: 'LATIN SMALL LETTER Z'
 	ot:
-		advanceWidth: contours[1].nodes[1].x + spacingRight
+		advanceWidth: contours[1].nodes[0].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg'],
 		['translateY', baseLine]
