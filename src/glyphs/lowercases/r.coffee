@@ -60,6 +60,7 @@ exports.glyphs['r'] =
 					x: contours[0].nodes[0].expandedTo[1].x + 170 * ((240 + 200 * width) / 440)
 					y: xHeight + overshoot
 					dirOut: 0 + 'deg'
+					tensionIn: 1.2
 					expand: Object({
 						width: thickness
 						angle: - 90 + 'deg'

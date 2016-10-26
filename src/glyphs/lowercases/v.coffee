@@ -3,14 +3,14 @@ exports.glyphs['v'] =
 	glyphName: 'v'
 	characterName: 'LATIN SMALL LETTER V'
 	ot:
-		advanceWidth: contours[1].nodes[1].expandedTo[1].x + spacingRight
+		advanceWidth: contours[1].nodes[0].expandedTo[1].x + spacingRight
 	transforms: Array(
 		['skewX', slant + 'deg'],
 		['translateY', baseLine]
 	)
 	parameters:
-		spacingLeft: 20 * spacing
-		spacingRight: 20 * spacing
+		spacingLeft: 50 * spacing + 30
+		spacingRight: 50 * spacing + 30
 	tags: [
 		'all',
 		'latin',
@@ -22,42 +22,45 @@ exports.glyphs['v'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft + 0.25 * thickness
+					x: spacingLeft + (21/80) * thickness
 					y: xHeight
 					typeOut: 'line'
 					expand: Object({
-						width: thickness
+						width: ( 85 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
 				1:
-					x: contours[0].nodes[0].x + 160
+					x: contours[0].nodes[0].expandedTo[0].x + ( contours[1].nodes[0].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) * 0.5
 					y: 0
 					typeOut: 'line'
 					expand: Object({
-						width: thickness
+						width: ( 85 / 80 ) * thickness
 						angle: 0 + 'deg'
-						distr: 0.25
+						distr: 0.75
 					})
 		1:
 			skeleton: true
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[1].expandedTo[1].x
-					y: 0
-					typeOut: 'line'
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 200 * width + 235 - (21),
+						contours[0].nodes[0].expandedTo[1].x + 0.75 * ( 85 / 80 ) * thickness
+					)
+					y: xHeight
+					dirOut: Utils.lineAngle( contours[1].nodes[1].expandedTo[1].point, contours[1].nodes[0].expandedTo[0].point )
 					expand: Object({
-						width: thickness
+						width: ( 85 / 80 ) * thickness
 						angle: 0 + 'deg'
-						distr: 0.5
+						distr: 0.75
 					})
 				1:
-					x: contours[1].nodes[0].x + 160
-					y: xHeight
-					typeOut: 'line'
+					x: contours[0].nodes[1].expandedTo[1].x
+					y: 0
+					dirIn: Utils.lineAngle( contours[1].nodes[1].expandedTo[0].point, contours[1].nodes[0].expandedTo[1].point )
 					expand: Object({
-						width: thickness
+						width: ( 85 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.5
 					})
