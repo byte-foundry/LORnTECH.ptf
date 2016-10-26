@@ -67,7 +67,7 @@ exports.glyphs['p'] =
 						contours[0].nodes[0].expandedTo[0].x + 200 * width + 250 - (20),
 						contours[0].nodes[0].expandedTo[1].x + 0.25 * ( 85 / 80 ) * thickness + 10
 					)
-					y: xHeight - 180 - (8/80) * thickness
+					y: xHeight - ( 180 / 500 ) * xHeight - (8/80) * thickness
 					dirIn: 90 + 'deg'
 					type: 'smooth'
 					expand: Object({

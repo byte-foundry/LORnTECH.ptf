@@ -9,8 +9,8 @@ exports.glyphs['y'] =
 		['translateY', baseLine]
 	)
 	parameters:
-		spacingLeft: 20 * spacing
-		spacingRight: 20 * spacing
+		spacingLeft: 50 * spacing + 30
+		spacingRight: 50 * spacing + 25
 	tags: [
 		'all',
 		'latin',
@@ -22,46 +22,56 @@ exports.glyphs['y'] =
 			closed: false
 			nodes:
 				0:
-					x: spacingLeft + 0.25 * thickness
+					x: spacingLeft + (21/80) * thickness
 					y: xHeight
 					typeOut: 'line'
 					expand: Object({
-						width: thickness + ( width - 1 ) * 10
+						width: ( 85 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
 				1:
-					x: contours[0].nodes[0].expandedTo[1].x + ( contours[1].nodes[0].expandedTo[0].x - contours[0].nodes[0].expandedTo[1].x ) * (200/300)
-					x: Utils.onLine({
-						on: [ contours[1].nodes[1].expandedTo[0].point, contours[1].nodes[0].expandedTo[0].point ]
-						y: 0
-					})
+					x: contours[0].nodes[0].expandedTo[0].x + ( contours[1].nodes[0].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) * 0.5
 					y: 0
 					typeOut: 'line'
 					expand: Object({
-						width: thickness + ( width - 1 ) * 10
+						width: ( 85 / 80 ) * thickness
 						angle: 0 + 'deg'
-						distr: 0.25
+						distr: 0.15 + ( 0.1 / 80 ) * thickness
 					})
 		1:
 			skeleton: true
 			closed: false
 			nodes:
 				0:
-					x: contours[0].nodes[0].expandedTo[1].x + 180 + 200 * width
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 200 * width + 235 - (21),
+						contours[0].nodes[0].expandedTo[1].x + 0.75 * ( 85 / 80 ) * thickness
+					)
 					y: xHeight
-					typeOut: 'line'
+					dirOut: Utils.lineAngle( contours[1].nodes[1].expandedTo[1].point, contours[1].nodes[0].expandedTo[0].point )
 					expand: Object({
-						width: thickness + ( width - 1 ) * 10
+						width: ( 85 / 80 ) * thickness
 						angle: 0 + 'deg'
-						distr: 0.5
+						distr: 0.75
 					})
 				1:
-					x: contours[0].nodes[0].x + 80 * width + ( 40 / 80 ) * thickness
-					y: descender
-					typeOut: 'line'
+					x: contours[0].nodes[1].expandedTo[1].x
+					y: 0
+					type: 'smooth'
+					dirIn: Utils.lineAngle( contours[1].nodes[1].expandedTo[0].point, contours[1].nodes[0].expandedTo[1].point )
 					expand: Object({
-						width: thickness + ( width - 1 ) * 10
+						width: ( 85 / 80 ) * thickness
 						angle: 0 + 'deg'
-						distr: 0.5
+						distr: 1
+					})
+				2:
+					x: contours[0].nodes[0].expandedTo[0].x + 30
+					y: descender
+					dirIn: Utils.lineAngle( contours[1].nodes[2].expandedTo[0].point, contours[1].nodes[1].expandedTo[1].point )
+					# tensionIn: 0
+					expand: Object({
+						width: ( 85 / 80 ) * thickness
+						angle: 0 + 'deg'
+						distr: 0
 					})
