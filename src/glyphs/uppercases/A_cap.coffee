@@ -34,25 +34,7 @@ exports.glyphs['A_cap'] =
 						distr: 0.25
 					})
 				1:
-					x: ( contours[0].nodes[0].x + contours[1].nodes[0].x ) / 2 - (width - 1) / 2
-					y: Utils.onLine({x: ( contours[0].nodes[0].x + contours[1].nodes[0].x ) / 2, on: [ contours[0].nodes[0].expandedTo[1].point, contours[0].nodes[3].expandedTo[1].point ]})
-					typeOut: "line"
-					expand: Object({
-						width: (87 / 80 * thickness * opticThickness) * contrast * (1 + (width - 1) / 9)
-						angle: 0 + 'deg'
-						distr: 1
-					})
-				2:
-					x: contours[0].nodes[1].expandedTo[0].x
-					y: contours[0].nodes[1].point.y
-					typeOut: "line"
-					expand: Object({
-						width: (120 / 80 * thickness * opticThickness) * contrast * (1 + (width - 1) / 9)
-						angle: 0 + 'deg'
-						distr: 0
-					})
-				3:
-					x: ( contours[0].nodes[0].x + contours[1].nodes[0].x ) / 2 - (70 / 80 * thickness * opticThickness) * 0.75
+					x: ( contours[0].nodes[0].x + contours[1].nodes[0].x ) / 2 - (70 / 80 * thickness * opticThickness * contrast) * 0.75
 					y: capHeight
 					typeOut: "line"
 					expand: Object({
@@ -74,24 +56,6 @@ exports.glyphs['A_cap'] =
 						distr: 0.75
 					})
 				1:
-					x: ( contours[0].nodes[0].x + contours[1].nodes[0].x ) / 2 + (width - 1) / 2
-					y: Utils.onLine({x: ( contours[0].nodes[0].x + contours[1].nodes[0].x ) / 2, on: [ contours[1].nodes[0].expandedTo[0].point, contours[1].nodes[3].expandedTo[0].point ]})
-					typeOut: "line"
-					expand: Object({
-						width: (87 / 80 * thickness * opticThickness) * (1 + (width - 1) / 9)
-						angle: 0 + 'deg'
-						distr: 0
-					})
-				2:
-					x: contours[1].nodes[1].expandedTo[1].x
-					y: contours[1].nodes[1].point.y
-					typeOut: "line"
-					expand: Object({
-						width: (120 / 80 * thickness * opticThickness) * (1 + (width - 1) / 9)
-						angle: 0 + 'deg'
-						distr: 1
-					})
-				3:
 					x: ( contours[0].nodes[0].x + contours[1].nodes[0].x ) / 2 + (70 / 80 * thickness * opticThickness) * 0.75
 					y: capHeight
 					typeOut: "line"

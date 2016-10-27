@@ -70,7 +70,7 @@ exports.glyphs['C_cap'] =
 				1:
 					x: 377 + 200 * width
 					y: contours[1].nodes[0].y - 39
-					dirIn: Utils.lineAngle( contours[1].nodes[0].point, contours[1].nodes[1].point ) - 5 / 180 * Math.PI - contours[1].nodes[1].expand.width / 80 * Math.PI / 6
+					dirIn: Utils.lineAngle( contours[1].nodes[0].point, contours[1].nodes[1].point ) - 15 / 180 * Math.PI + (contrast - 1) * Math.PI / 6
 					expand: Object({
 						width:
 							if contrast < 1
@@ -95,7 +95,7 @@ exports.glyphs['C_cap'] =
 				1:
 					x: 389 + 200 * width
 					y: contours[2].nodes[0].y + 40
-					dirIn: Utils.lineAngle( contours[2].nodes[0].point, contours[2].nodes[1].point ) + 2 / 180 * Math.PI + contours[1].nodes[1].expand.width / 80 * Math.PI / 6
+					dirIn: Utils.lineAngle( contours[2].nodes[0].point, contours[2].nodes[1].point ) + 12 / 180 * Math.PI - (contrast - 1) * Math.PI / 6
 					expand: Object({
 						width:
 							if contrast < 1

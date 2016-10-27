@@ -33,7 +33,7 @@ exports.glyphs['Q_cap'] =
 					tensionOut: 0.96
 					tensionIn: 0.96
 					expand: Object({
-						width: 83/80 * thickness * opticThickness
+						width: 83/80 * thickness * opticThickness * contrast
 						angle: 90 + 'deg'
 						distr: 0
 					})
@@ -44,7 +44,7 @@ exports.glyphs['Q_cap'] =
 					tensionOut: 0.96
 					tensionIn: 0.96
 					expand: Object({
-						width: 90 / 80 * thickness * opticThickness * contrast + (width - 1) * 15  * (thickness / 80 - 1)
+						width: 90 / 80 * thickness * opticThickness + (width - 1) * 15  * (thickness / 80 - 1)
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
@@ -55,7 +55,7 @@ exports.glyphs['Q_cap'] =
 					tensionOut: 0.96
 					tensionIn: 0.96
 					expand: Object({
-						width: 84/80 * thickness * opticThickness
+						width: 84/80 * thickness * opticThickness * contrast
 						angle: -90 + 'deg'
 						distr: 0
 					})
@@ -66,7 +66,7 @@ exports.glyphs['Q_cap'] =
 					tensionOut: 0.96
 					tensionIn: 0.96
 					expand: Object({
-						width: 90 / 80 * thickness * opticThickness * contrast  + (width - 1) * 15  * (thickness / 80 - 1)
+						width: 90 / 80 * thickness * opticThickness + (width - 1) * 15  * (thickness / 80 - 1)
 						angle: 180 + 'deg'
 						distr: 0.25
 					})

@@ -43,7 +43,7 @@ exports.glyphs['M_cap'] =
 			closed: false
 			nodes:
 				0:
-					x:  ( contours[0].nodes[0].expandedTo[0].x + ( 559 + 200 * width - (84 / 80 * thickness * opticThickness) * 0.25 * contrast ) ) + (thickness - 80) * 2
+					x:  ( contours[0].nodes[0].expandedTo[0].x + ( 559 + 200 * width - (84 / 80 * thickness * opticThickness) * 0.25) ) + (thickness - 80) * 2
 					y: 0
 					typeOut: "line"
 					expand: Object({
@@ -65,7 +65,7 @@ exports.glyphs['M_cap'] =
 			closed: false
 			nodes:
 				1:
-					x: contours[0].nodes[1].expandedTo[0].x + (thickness / 80) * 53 + 0.5 * (85 / 80 * thickness * opticThickness)
+					x: contours[0].nodes[1].expandedTo[0].x + (thickness / 80) * 53 * contrast+ 0.5 * (85 / 80 * thickness * opticThickness)
 					y: capHeight
 					typeOut: "line"
 					expand: Object({
@@ -87,7 +87,7 @@ exports.glyphs['M_cap'] =
 			closed: false
 			nodes:
 				1:
-					x: contours[1].nodes[1].expandedTo[1].x - thickness / 80 * 53 - 0.5 * (88 / 80 * thickness * opticThickness) * contrast + (width - 1) * 5
+					x: contours[1].nodes[1].expandedTo[0].x + (contours[1].nodes[1].expand.width - thickness / 80 * 53) * contrast - 0.5 * (88 / 80 * thickness * opticThickness) * contrast + (width - 1) * 5
 					y: capHeight
 					typeOut: "line"
 					expand: Object({
@@ -96,7 +96,7 @@ exports.glyphs['M_cap'] =
 						distr: 0.5
 					})
 				0:
-					x: contours[2].nodes[0].expandedTo[0].x + 38 * thickness / 80 + 0.5 * (85 / 80 * thickness * opticThickness) * contrast + (width - 1) * 5
+					x: contours[2].nodes[0].expandedTo[0].x + 38 * thickness / 80 + 0.5 * (85 / 80 * thickness * opticThickness) + (width - 1) * 5
 					y: 0
 					typeOut: "line"
 					expand: Object({

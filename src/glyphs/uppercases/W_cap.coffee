@@ -8,8 +8,8 @@ exports.glyphs['W_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 20 * spacing
-		spacingRight: 20 * spacing
+		spacingLeft: 50 * spacing + 45
+		spacingRight: 50 * spacing + 45
 	tags: [
 		'all',
 		'latin',
@@ -29,47 +29,47 @@ exports.glyphs['W_cap'] =
 					y: capHeight
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 * thickness * opticThickness)
+						width: (92 / 80 * thickness * opticThickness)
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
 				1:
-					x: contours[0].nodes[0].x + (contours[1].nodes[0].x - contours[0].nodes[0].x)*0.2
+					x: ( contours[0].nodes[0].expandedTo[1].x + contours[2].nodes[0].expandedTo[0].x ) / 2 - thickness * 0.25 - 10
 					y: 0
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 * thickness * opticThickness)
+						width: (87 / 80 * thickness * opticThickness)
 						angle: 0 + 'deg'
-						distr: 0.25
+						distr: 0.5
 					})
 		1:
 			skeleton: true
 			closed: false
 			nodes:
 				0:
-					x:  ( contours[0].nodes[0].x + ( 721 + 200 * width + (88 / 80 * thickness * opticThickness) * 0.25 ) )
+					x:  ( contours[0].nodes[0].expandedTo[0].x + ( 784 + 200 * width - (92 / 80 * thickness * opticThickness) * 0.25 ) ) + thickness - 80
 					y: capHeight
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 * thickness * opticThickness) * contrast
+						width: (92 / 80 * thickness * opticThickness) * contrast
 						angle: 0 + 'deg'
 						distr: 0.75
 					})
 				1:
-					x: contours[0].nodes[0].x + (contours[1].nodes[0].x - contours[0].nodes[0].x)*0.80
+					x: ( contours[1].nodes[0].expandedTo[0].x + contours[3].nodes[0].expandedTo[1].x ) / 2 + thickness * 0.25 + 10 * (contrast - 1)
 					y: 0
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 * thickness * opticThickness) * contrast
+						width: (87 / 80 * thickness * opticThickness) * contrast
 						angle: 0 + 'deg'
-						distr: 0.75
+						distr: 0.5
 					})
 		2:
 			skeleton: true
 			closed: false
 			nodes:
 				1:
-					x: contours[0].nodes[1].x + (88 / 80 * thickness * opticThickness) * 0.75 - ( 15 * (88 / 80 * thickness * opticThickness) / 80 ) + (88 / 80 * thickness * opticThickness) * 0.5 * contrast
+					x: ( contours[0].nodes[0].expandedTo[1].x + contours[2].nodes[0].expandedTo[0].x ) / 2 + thickness * 0.25 + 10 * (contrast - 1);
 					y: 0
 					typeOut: "line"
 					expand: Object({
@@ -78,11 +78,11 @@ exports.glyphs['W_cap'] =
 						distr: 0.5
 					})
 				0:
-					x: ( contours[0].nodes[0].expandedTo[1].x + contours[1].nodes[0].expandedTo[0].x ) * 0.5
+					x: ( contours[0].nodes[0].expandedTo[0].x + contours[1].nodes[0].expandedTo[1].x ) / 2 - thickness * 0.25 - 1
 					y: capHeight
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 * thickness * opticThickness) * contrast + (width - 1) * 5
+						width: (82 / 80 * thickness * opticThickness) * contrast + (width - 1) * 5
 						angle: 0 + 'deg'
 						distr: 0.5
 					})
@@ -91,20 +91,20 @@ exports.glyphs['W_cap'] =
 			closed: false
 			nodes:
 				1:
-					x: contours[1].nodes[1].x - (88 / 80 * thickness * opticThickness) * 0.75 + ( 15 * (88 / 80 * thickness * opticThickness) / 80 ) - (88 / 80 * thickness * opticThickness) * 0.5 * contrast
+					x: ( contours[1].nodes[0].expandedTo[0].x + contours[3].nodes[0].expandedTo[1].x ) / 2 - thickness * 0.25 - 10
 					y: 0
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 * thickness * opticThickness) + (width - 1) * 5
+						width: (85 / 80 * thickness * opticThickness) + (width - 1) * 5
 						angle: 0 + 'deg'
 						distr: 0.5
 					})
 				0:
-					x: ( contours[0].nodes[0].expandedTo[1].x + contours[1].nodes[0].expandedTo[0].x ) * 0.5
+					x: ( contours[0].nodes[0].expandedTo[0].x + contours[1].nodes[0].expandedTo[1].x ) / 2 + thickness * 0.25 + 1
 					y: capHeight
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 * thickness * opticThickness) + (width - 1) * 5
+						width: (82 / 80 * thickness * opticThickness) + (width - 1) * 5
 						angle: 0 + 'deg'
 						distr: 0.5
 					})

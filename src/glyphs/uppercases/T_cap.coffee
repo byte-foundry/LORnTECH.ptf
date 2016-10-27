@@ -8,8 +8,8 @@ exports.glyphs['T_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 25 * spacing
-		spacingRight: 25 * spacing
+		spacingLeft: 50 * spacing + 40
+		spacingRight: 50 * spacing + 40
 	tags: [
 		'all',
 		'latin',
@@ -29,7 +29,7 @@ exports.glyphs['T_cap'] =
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
-						width: ( 90 / 80 ) * thickness * opticThickness
+						width: (81 / 80 ) * thickness * opticThickness
 						angle: 0 + 'deg'
 						distr: 0.5
 					})
@@ -38,7 +38,7 @@ exports.glyphs['T_cap'] =
 					y: 0
 					dirOut: 90 + 'deg'
 					expand: Object({
-						width: ( 90 / 80 ) * thickness * opticThickness
+						width: ( 81 / 80 ) * thickness * opticThickness
 						angle: 0 + 'deg'
 						distr: 0.5
 					})
@@ -51,16 +51,16 @@ exports.glyphs['T_cap'] =
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * opticThickness * contrast
-						angle: - 90 + 'deg'
-						distr: 0
+						width: 81/80 * thickness * opticThickness * contrast
+						angle: 90 + 'deg'
+						distr: 1
 					})
 				1:
-					x: 300 + 200 * width
+					x: 306 + 200 * width + (thickness - 80)
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
-						width: thickness * opticThickness * contrast
-						angle: - 90 + 'deg'
-						distr: 0
+						width: 81/80 * thickness * opticThickness * contrast
+						angle: 90 + 'deg'
+						distr: 1
 					})

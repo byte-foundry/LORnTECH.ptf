@@ -8,8 +8,8 @@ exports.glyphs['X_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 30 * spacing
-		spacingRight: 30 * spacing
+		spacingLeft: 50 * spacing + 25
+		spacingRight: 50 * spacing + 25
 	tags: [
 		'all',
 		'latin',
@@ -38,16 +38,20 @@ exports.glyphs['X_cap'] =
 						angle: 0 + 'deg'
 						distr: 0.75
 					})
-				2:
-					x: contours[0].nodes[0].expandedTo[0].x + ( contours[1].nodes[0].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) / 2
+		3:
+			skeleton: true
+			closed: false
+			nodes:
+				0:
+					x: contours[0].nodes[0].expandedTo[0].x + ( contours[1].nodes[0].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) / 2 - (contrast - 1) * thickness * 0.75 / 2 + 0.25 * contours[1].nodes[1].expand.width * (contrast - 1) * 1.176
 					y: capHeight * 0.5
 					typeOut: "line"
 					expand: Object({
 						width: (88 / 80 * thickness * opticThickness) + (width - 1) * 6
-						angle: 0 + 'deg'
+						angle: Math.atan2(-(contours[2].nodes[0].expandedTo[0].y - contours[2].nodes[1].expandedTo[0].y), -(contours[2].nodes[0].expandedTo[0].x - contours[2].nodes[1].expandedTo[0].x))
 						distr: 0.75
 					})
-				3:
+				1:
 					x: spacingLeft + 0.25 * (88 / 80 * thickness * opticThickness)
 					y: capHeight
 					typeOut: "line"
@@ -66,19 +70,23 @@ exports.glyphs['X_cap'] =
 					typeOut: "line"
 					expand: Object({
 						width: (88 / 80 * thickness * opticThickness) + (width - 1) * 8
-						angle: 0 + 'deg'
+						angle:  0 + 'deg'
 						distr: 0.75
 					})
 				1:
-					x: contours[0].nodes[0].expandedTo[0].x + ( contours[1].nodes[0].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) / 2
+					x: contours[0].nodes[0].expandedTo[0].x + ( contours[1].nodes[0].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) / 2 + (contrast - 1) * thickness * 0.75 / 2 - 0.25 * contours[1].nodes[1].expand.width * (contrast - 1) * 1.176
 					y: capHeight * 0.5
 					typeOut: "line"
 					expand: Object({
 						width: (88 / 80 * thickness * opticThickness) + (width - 1) * 6
-						angle: 0 + 'deg'
+						angle: Math.atan2(-(contours[2].nodes[0].expandedTo[0].y - contours[2].nodes[1].expandedTo[0].y), -(contours[2].nodes[0].expandedTo[0].x - contours[2].nodes[1].expandedTo[0].x))
 						distr: 0.25
 					})
-				2:
+		2:
+			skeleton: true
+			closed: false
+			nodes:
+				0:
 					x: contours[0].nodes[0].expandedTo[0].x + ( contours[1].nodes[0].expandedTo[1].x - contours[0].nodes[0].expandedTo[0].x ) / 2
 					y: capHeight * 0.5
 					typeOut: "line"
@@ -87,7 +95,7 @@ exports.glyphs['X_cap'] =
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
-				3:
+				1:
 					x: 280 + 200 * width + 0.75 * (88 / 80 * thickness * opticThickness)
 					y: capHeight
 					typeOut: "line"

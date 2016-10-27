@@ -8,8 +8,8 @@ exports.glyphs['U_cap'] =
 		['skewX', slant + 'deg']
 	)
 	parameters:
-		spacingLeft: 60 * spacing
-		spacingRight: 60 * spacing
+		spacingLeft: 50 * spacing + 80
+		spacingRight: 50 * spacing + 80
 
 	tags: [
 		'all',
@@ -30,47 +30,47 @@ exports.glyphs['U_cap'] =
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
-						width: 90 / 80 * thickness * opticThickness
+						width: 81 / 80 * thickness * opticThickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
 				1:
 					x: contours[0].nodes[0].x
-					y: capHeight / 3
+					y: capHeight / 3 + 20 * (width - 1) + (thickness - 80) / 2
 					dirOut: 90 + 'deg'
 					expand: Object({
-						width: 90 / 80 * thickness * opticThickness
+						width: 81 / 80 * thickness * opticThickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
 				2:
 					x: contours[0].nodes[0].expandedTo[0].x + ( contours[0].nodes[4].expandedTo[0].x - contours[0].nodes[0].expandedTo[0].x ) * 0.5
-					y: 0
+					y: -overshoot
 					dirOut: 0 + 'deg'
 					expand: Object({
 						width:
 							if contrast < 1
-							then thickness * opticThickness * (contrast + (1 - contrast) * 0.4)
-							else thickness * opticThickness * contrast
+							then 83 / 80 * thickness * opticThickness * (contrast + (1 - contrast) * 0.4)
+							else  83 / 80 * thickness * opticThickness * contrast
 						angle: 90 + 'deg'
 						distr: 0
 					})
 				3:
 					x: contours[0].nodes[4].x
-					y: capHeight / 3 + (thickness / 80 - 1) * 20 + 5 * (width - 1)
+					y: capHeight / 3 + 20 * (width - 1) + (thickness - 80) / 2
 					dirIn: 90 + 'deg'
 					typeOut: 'line'
 					expand: Object({
-						width: 90 / 80 * thickness * opticThickness * contrast
+						width: 81 / 80 * thickness * opticThickness * contrast
 						angle: 180 + 'deg'
 						distr: 0.25
 					})
 				4:
-					x: 350 + 200 * width
+					x: contours[0].nodes[0].expandedTo[0].x + 300 + 200 * width - contours[0].nodes[4].expand.width * 0.25 + thickness - 80
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
-						width: 90 / 80 * thickness * opticThickness * contrast
+						width: 81 / 80 * thickness * opticThickness * contrast
 						angle: 180 + 'deg'
 						distr: 0.25
 					})
