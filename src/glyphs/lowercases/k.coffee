@@ -48,7 +48,7 @@ exports.glyphs['k'] =
 					y: 0
 					typeOut: "line"
 					expand: Object({
-						width: ( 110 / 80 ) * thickness
+						width: ( 110 / 80 ) * thickness + (width - 1) * ( 15 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0
 					})
@@ -57,7 +57,7 @@ exports.glyphs['k'] =
 					y: xHeight * 0.6
 					typeOut: "line"
 					expand: Object({
-						width: ( 115 / 80 ) * thickness
+						width: ( 115 / 80 ) * thickness + (width - 1) * ( 10 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0
 					})
@@ -70,7 +70,7 @@ exports.glyphs['k'] =
 					y: xHeight
 					typeOut: "line"
 					expand: Object({
-						width: ( 105 / 80 ) * thickness
+						width: ( 105 / 80 ) * thickness + (width - 1) * ( 15 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.75
 					})

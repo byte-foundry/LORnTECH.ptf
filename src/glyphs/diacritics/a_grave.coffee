@@ -1,7 +1,7 @@
-exports.glyphs['a_acute'] =
-	unicode: 'á'
-	glyphName: 'aacute'
-	characterName: 'LATIN SMALL LETTER A WITH ACUTE'
+exports.glyphs['a_grave'] =
+	unicode: 'à'
+	glyphName: 'agrave'
+	characterName: 'LATIN SMALL LETTER A WITH GRAVE'
 	base: 'a'
 	advanceWidth: base.advanceWidth
 	tags: [
@@ -12,7 +12,7 @@ exports.glyphs['a_acute'] =
 	]
 	components:
 		0:
-			base: 'acute'
+			base: 'grave'
 			copy: true
 			parentAnchors:
 				0:

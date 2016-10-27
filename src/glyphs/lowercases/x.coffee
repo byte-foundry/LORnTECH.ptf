@@ -26,7 +26,7 @@ exports.glyphs['x'] =
 					y: xHeight
 					typeOut: 'line'
 					expand: Object({
-						width: ( 95 / 80 ) * thickness
+						width: ( 95 / 80 ) * thickness + (width - 1) * ( 10 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
@@ -38,7 +38,7 @@ exports.glyphs['x'] =
 					y: 0
 					typeOut: 'line'
 					expand: Object({
-						width: ( 105 / 80 ) * thickness
+						width: ( 105 / 80 ) * thickness + (width - 1) * ( 10 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 1
 					})
@@ -54,7 +54,7 @@ exports.glyphs['x'] =
 					y: xHeight
 					dirOut: Utils.lineAngle( contours[1].nodes[1].expandedTo[1].point, contours[1].nodes[0].expandedTo[0].point )
 					expand: Object({
-						width: ( 90 / 80 ) * thickness
+						width: ( 90 / 80 ) * thickness + (width - 1) * ( 10 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.75
 					})
@@ -66,7 +66,7 @@ exports.glyphs['x'] =
 					y: xHeight / 2
 					dirIn: Utils.lineAngle( contours[1].nodes[1].expandedTo[0].point, contours[1].nodes[0].expandedTo[1].point )
 					expand: Object({
-						width: ( 85 / 80 ) * thickness
+						width: ( 85 / 80 ) * thickness + (width - 1) * ( 10 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0
 					})
@@ -82,7 +82,7 @@ exports.glyphs['x'] =
 					y: xHeight / 2 + ( 10 / 80 ) * thickness
 					dirOut: Utils.lineAngle( contours[2].nodes[0].expandedTo[1].point, contours[2].nodes[1].expandedTo[0].point )
 					expand: Object({
-						width: ( 85 / 80 ) * thickness
+						width: ( 85 / 80 ) * thickness + (width - 1) * ( 10 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0
 					})
@@ -91,7 +91,7 @@ exports.glyphs['x'] =
 					y: 0
 					dirIn: Utils.lineAngle( contours[2].nodes[0].expandedTo[0].point, contours[2].nodes[1].expandedTo[1].point )
 					expand: Object({
-						width: ( 90 / 80 ) * thickness
+						width: ( 90 / 80 ) * thickness + (width - 1) * ( 10 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0
 					})
