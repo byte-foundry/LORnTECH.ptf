@@ -23,7 +23,10 @@ exports.glyphs['eight'] =
 				0:
 					x: contours[0].nodes[4].x
 					y: contours[0].nodes[4].y
-					dirOut: - 150 + 'deg'
+					dirOut: Math.max(
+						Utils.lineAngle( contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[7].expandedTo[1].point ) - ( 20 / 180 * Math.PI ),
+						- ( 20 / 180 * Math.PI )
+					)
 					expand: Object({
 						width: ( 105 / 80 ) * thickness
 						angle: - 20 + 'deg'
@@ -31,7 +34,7 @@ exports.glyphs['eight'] =
 					})
 				1:
 					x: spacingLeft + (20/80) * thickness
-					y: 182 ####
+					y: ( - overshoot + thickness ) + ( (( 380 / 700 ) * capHeight - ( Math.sin( 60 / 180 * Math.PI ) * (thickness / 2) )) - ( - overshoot + thickness )) * 0.45
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
 					expand: Object({
@@ -65,7 +68,10 @@ exports.glyphs['eight'] =
 				4:
 					x: ( contours[0].nodes[1].expandedTo[0].x + contours[0].nodes[3].expandedTo[0].x ) / 2
 					y: ( 380 / 700 ) * capHeight
-					dirOut: Utils.lineAngle( contours[0].nodes[3].expandedTo[0].point, contours[0].nodes[5].expandedTo[0].point ) + ( 30 / 180 * Math.PI )
+					dirOut: Math.min(
+						Utils.lineAngle( contours[0].nodes[3].expandedTo[0].point, contours[0].nodes[5].expandedTo[0].point ) + ( 30 / 180 * Math.PI ),
+						Math.PI
+					)
 					type: 'smooth'
 					expand: Object({
 						width: thickness
@@ -73,17 +79,17 @@ exports.glyphs['eight'] =
 						distr: 0.5
 					})
 				5:
-					x: contours[0].nodes[1].x + 18
-					y: 533 ####
+					x: contours[0].nodes[1].x + 18 + (20)
+					y: (( 380 / 700 ) * capHeight + ( Math.sin( 60 / 180 * Math.PI ) * (thickness / 2) )) + ( ( (capHeight + overshoot) - thickness ) - (( 380 / 700 ) * capHeight + ( Math.sin( 60 / 180 * Math.PI ) * (thickness / 2) )) ) * 0.55
 					dirOut: 90 + 'deg'
 					type: 'smooth'
 					expand: Object({
 						width: ( 82 / 80 ) * thickness
 						angle: 180 + 2 + 'deg'
-						distr: 1
+						distr: 0.75
 					})
 				6:
-					x: contours[0].nodes[2].x
+					x: contours[0].nodes[2].x + 10
 					y: capHeight + overshoot
 					dirOut: 0 + 'deg'
 					type: 'smooth'
@@ -93,19 +99,22 @@ exports.glyphs['eight'] =
 						distr: 1
 					})
 				7:
-					x: contours[0].nodes[3].x - 18
-					y: 533 ####
+					x: contours[0].nodes[3].x - 18 - (20)
+					y: contours[0].nodes[5].y
 					dirOut: - 90 + 'deg'
 					type: 'smooth'
 					expand: Object({
 						width: ( 82 / 80 ) * thickness
 						angle: 2 + 'deg'
-						distr: 1
+						distr: 0.75
 					})
 				8:
 					x: contours[0].nodes[4].x
 					y: contours[0].nodes[4].y
-					dirIn: 30 + 'deg'
+					dirIn: Math.max(
+						Utils.lineAngle( contours[0].nodes[1].expandedTo[0].point, contours[0].nodes[7].expandedTo[1].point ) - ( 20 / 180 * Math.PI ),
+						0
+					)
 					expand: Object({
 						width: ( 105 / 80 ) * thickness
 						angle: - 20 + 'deg'

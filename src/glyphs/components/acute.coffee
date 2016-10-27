@@ -15,11 +15,20 @@ exports.glyphs['acute'] =
 			closed: false
 			nodes:
 				0:
-					x: 0
-					y: 0
+					x: anchors[0].x
+					y: anchors[0].y
+					typeOut: 'line'
+					expand: Object({
+						width: ( 45 / 80 ) * thickness
+						angle: 105 + 'deg'
+						distr: 0
+					})
+				1:
+					x: contours[0].nodes[0].expandedTo[0].x + 125
+					y: contours[0].nodes[0].expandedTo[0].y + 130
 					dirOut: 0 + 'deg'
 					expand: Object({
-						width: 0
-						angle: 0 + 'deg'
+						width: thickness
+						angle: 135 + 'deg'
 						distr: 0.25
 					})
