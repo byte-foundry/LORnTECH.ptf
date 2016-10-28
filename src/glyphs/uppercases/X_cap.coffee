@@ -25,7 +25,7 @@ exports.glyphs['X_cap'] =
 					y: 0
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 * thickness * opticThickness) * contrast + (width - 1) * 8
+						width: (88 / 80 * thickness * opticThickness) * contrast + (width - 1) * ( 8 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
@@ -34,7 +34,7 @@ exports.glyphs['X_cap'] =
 					y: capHeight * 0.5
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 * thickness * opticThickness) * contrast + (width - 1) * 6
+						width: (88 / 80 * thickness * opticThickness) * contrast + (width - 1) * ( 6 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.75
 					})
@@ -47,7 +47,7 @@ exports.glyphs['X_cap'] =
 					y: capHeight * 0.5
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 * thickness * opticThickness) + (width - 1) * 6
+						width: (88 / 80 * thickness * opticThickness) + (width - 1) * ( 6 / 80 ) * thickness
 						angle: Math.atan2(-(contours[2].nodes[0].expandedTo[0].y - contours[2].nodes[1].expandedTo[0].y), -(contours[2].nodes[0].expandedTo[0].x - contours[2].nodes[1].expandedTo[0].x))
 						distr: 0.75
 					})
@@ -56,7 +56,7 @@ exports.glyphs['X_cap'] =
 					y: capHeight
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 * thickness * opticThickness) + (width - 1) * 8
+						width: (88 / 80 * thickness * opticThickness) + (width - 1) * ( 8 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
@@ -69,7 +69,7 @@ exports.glyphs['X_cap'] =
 					y: 0
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 * thickness * opticThickness) + (width - 1) * 8
+						width: (88 / 80 * thickness * opticThickness) + (width - 1) * ( 8 / 80 ) * thickness
 						angle:  0 + 'deg'
 						distr: 0.75
 					})
@@ -78,7 +78,7 @@ exports.glyphs['X_cap'] =
 					y: capHeight * 0.5
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 * thickness * opticThickness) + (width - 1) * 6
+						width: (88 / 80 * thickness * opticThickness) + (width - 1) * ( 6 / 80 ) * thickness
 						angle: Math.atan2(-(contours[2].nodes[0].expandedTo[0].y - contours[2].nodes[1].expandedTo[0].y), -(contours[2].nodes[0].expandedTo[0].x - contours[2].nodes[1].expandedTo[0].x))
 						distr: 0.25
 					})
@@ -91,7 +91,7 @@ exports.glyphs['X_cap'] =
 					y: capHeight * 0.5
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 * thickness * opticThickness) * contrast + (width - 1) * 6
+						width: (88 / 80 * thickness * opticThickness) * contrast + (width - 1) * ( 6 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
@@ -100,7 +100,7 @@ exports.glyphs['X_cap'] =
 					y: capHeight
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 * thickness * opticThickness) * contrast + (width - 1) * 8
+						width: (88 / 80 * thickness * opticThickness) * contrast + (width - 1) * ( 8 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.75
 					})

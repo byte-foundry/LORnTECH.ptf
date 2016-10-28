@@ -25,16 +25,16 @@ exports.glyphs['V_cap'] =
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
-						width: (92 / 80 * thickness * opticThickness) + (width - 1) * 5
+						width: (92 / 80 * thickness * opticThickness) + (width - 1) * ( 5 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
 				1:
-					x: ( contours[0].nodes[0].x + contours[1].nodes[1].x ) / 2 + 9.5 * (thickness / 80) * contrast - (thickness * opticThickness + (width - 1) * 5) * 0.75
+					x: ( contours[0].nodes[0].x + contours[1].nodes[1].x ) / 2 + 9.5 * (thickness / 80) * contrast - (thickness * opticThickness + (width - 1) * ( 5 / 80 ) * thickness) * 0.75
 					y: 0
 					typeOut: 'line'
 					expand: Object({
-						width: (87 / 80 * thickness * opticThickness) + (width - 1) * 5
+						width: (87 / 80 * thickness * opticThickness) + (width - 1) * ( 5 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})
@@ -43,11 +43,11 @@ exports.glyphs['V_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: ( contours[0].nodes[0].x + contours[1].nodes[1].x ) / 2 - 9.5 * (thickness / 80) * contrast + (thickness * opticThickness + (width - 1) * 5) * 0.75  * contrast
+					x: ( contours[0].nodes[0].x + contours[1].nodes[1].x ) / 2 - 9.5 * (thickness / 80) * contrast + (thickness * opticThickness + (width - 1) * ( 5 / 80 ) * thickness) * 0.75  * contrast
 					y: 0
 					typeOut: 'line'
 					expand: Object({
-						width: (87 / 80 * thickness * opticThickness) * contrast + (width - 1) * 5
+						width: (87 / 80 * thickness * opticThickness) * contrast + (width - 1) * ( 5 / 80 ) * thickness
 						angle: 180 + 'deg'
 						distr: 0.25
 					})
@@ -56,7 +56,7 @@ exports.glyphs['V_cap'] =
 					y: capHeight
 					typeOut: 'line'
 					expand: Object({
-						width: (92 / 80 * thickness * opticThickness) * contrast + (width - 1) * 5
+						width: (92 / 80 * thickness * opticThickness) * contrast + (width - 1) * ( 5 / 80 ) * thickness
 						angle: 180 + 'deg'
 						distr: 0.25
 					})

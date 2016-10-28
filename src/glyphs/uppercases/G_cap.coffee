@@ -41,7 +41,7 @@ exports.glyphs['G_cap'] =
 					tensionOut: 0.95 + (thickness / 80 - 1) * 0.10
 					tensionIn: 0.95 + (thickness / 80 - 1) * 0.10
 					expand: Object({
-						width: 90 / 80 * thickness * opticThickness + (width - 1) * 15  * (thickness / 80 - 1)
+						width: 90 / 80 * thickness * opticThickness + (width - 1) * ( 15 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})

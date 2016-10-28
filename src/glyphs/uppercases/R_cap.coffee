@@ -61,14 +61,17 @@ exports.glyphs['R_cap'] =
 						distr: 0
 					})
 				2:
-					x: contours[0].nodes[1].expandedTo[0].x + 235 + 200 * width - 0.25 * contours[0].nodes[1].expand.width
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 200 * width + 235 - (20),
+						contours[0].nodes[0].expandedTo[1].x + 0.25 * ( 82 / 80 * thickness * opticThickness / Math.cos(5 / 180 * Math.PI) )
+					)
 					y: (contours[1].nodes[0].expandedTo[0].y + contours[1].nodes[4].expandedTo[0].y) / 2 - Math.sin(5 / 180 * Math.PI) * 82 / 80 * thickness * opticThickness / Math.cos(5 / 180 * Math.PI) * 0.25
 					dirOut: 270 + 'deg'
 					dirIn: 270 + 'deg'
 					tensionOut: 1.1
 					expand: Object({
 						width: 82 / 80 * thickness * opticThickness / Math.cos(5 / 180 * Math.PI)
-						angle: 185 + 'deg'
+						angle: 184 + 'deg'
 						distr: 0.25
 					})
 				3:
@@ -95,20 +98,20 @@ exports.glyphs['R_cap'] =
 			closed: false
 			nodes:
 				0:
-					x: contours[1].nodes[3].x + 90
+					x: contours[1].nodes[3].x + 20
 					y: contours[1].nodes[3].y
 					typeOut: 'line'
 					expand: Object({
 						width: 96/80 * thickness * contrast
 						angle: 180 + 'deg'
-						distr: 0.25
+						distr: 1
 					})
 				1:
-					x: contours[1].nodes[3].x + 63 + 200
+					x: contours[2].nodes[0].expandedTo[1].x + 150
 					y: 0
 					typeOut: 'line'
 					expand: Object({
 						width: 97/80 * thickness
 						angle: 180 + 'deg'
-						distr: 0.25
+						distr: 1
 					})

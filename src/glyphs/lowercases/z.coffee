@@ -74,7 +74,7 @@ exports.glyphs['z'] =
 					y: contours[1].nodes[1].expandedTo[0].y
 					typeOut: 'line'
 					expand: Object({
-						width: ( 110 / 80 ) * thickness
+						width: ( 110 / 80 ) * thickness * (xHeight / 500)
 						angle: 180 + 90 + 'deg'
 						distr: 1
 					})
@@ -83,7 +83,7 @@ exports.glyphs['z'] =
 					y: contours[0].nodes[1].expandedTo[0].y
 					typeOut: 'line'
 					expand: Object({
-						width: ( 110 / 80 ) * thickness
+						width: ( 110 / 80 ) * thickness * (xHeight / 500)
 						angle: - 90 + 'deg'
 						distr: 0
 					})

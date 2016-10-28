@@ -73,7 +73,7 @@ exports.glyphs['W_cap'] =
 					y: 0
 					typeOut: "line"
 					expand: Object({
-						width: (88 / 80 * thickness * opticThickness) * contrast + (width - 1) * 5
+						width: (88 / 80 * thickness * opticThickness) * contrast + (width - 1) * ( 5 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.5
 					})
@@ -82,7 +82,7 @@ exports.glyphs['W_cap'] =
 					y: capHeight
 					typeOut: "line"
 					expand: Object({
-						width: (82 / 80 * thickness * opticThickness) * contrast + (width - 1) * 5
+						width: (82 / 80 * thickness * opticThickness) * contrast + (width - 1) * ( 5 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.5
 					})
@@ -95,7 +95,7 @@ exports.glyphs['W_cap'] =
 					y: 0
 					typeOut: "line"
 					expand: Object({
-						width: (85 / 80 * thickness * opticThickness) + (width - 1) * 5
+						width: (85 / 80 * thickness * opticThickness) + (width - 1) * ( 5 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.5
 					})
@@ -104,7 +104,7 @@ exports.glyphs['W_cap'] =
 					y: capHeight
 					typeOut: "line"
 					expand: Object({
-						width: (82 / 80 * thickness * opticThickness) + (width - 1) * 5
+						width: (82 / 80 * thickness * opticThickness) + (width - 1) * ( 5 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.5
 					})

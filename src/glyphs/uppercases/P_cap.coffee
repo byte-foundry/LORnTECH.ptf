@@ -61,7 +61,10 @@ exports.glyphs['P_cap'] =
 						distr: 0
 					})
 				2:
-					x: contours[0].nodes[1].expandedTo[0].x + 235 + 200 * width - 0.25 * contours[0].nodes[1].expand.width
+					x: Math.max(
+						contours[0].nodes[1].expandedTo[0].x + 235 + 200 * width - (20),
+						contours[0].nodes[1].expandedTo[1].x + 0.25 * 82 / 80 * thickness * opticThickness / Math.cos(5 / 180 * Math.PI)
+					)
 					y: (contours[1].nodes[0].expandedTo[0].y + contours[1].nodes[4].expandedTo[0].y) / 2 - Math.sin(5 / 180 * Math.PI) * 82 / 80 * thickness * opticThickness / Math.cos(5 / 180 * Math.PI) * 0.25
 					dirOut: 270 + 'deg'
 					dirIn: 270 + 'deg'

@@ -40,7 +40,7 @@ exports.glyphs['C_cap'] =
 					y: capHeight / 2 + 1
 					dirOut: 90 + 'deg'
 					expand: Object({
-						width: 94 / 80 * thickness * opticThickness + (width - 1) * 15 * (thickness / 80 - 1)
+						width: 94 / 80 * thickness * opticThickness + (width - 1) * ( 15 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.25
 					})

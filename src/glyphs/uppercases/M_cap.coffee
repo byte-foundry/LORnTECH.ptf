@@ -69,16 +69,16 @@ exports.glyphs['M_cap'] =
 					y: capHeight
 					typeOut: "line"
 					expand: Object({
-						width: (85 / 80 * thickness * opticThickness) + (width - 1) * 5
+						width: (85 / 80 * thickness * opticThickness) + (width - 1) * ( 5 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.5
 					})
 				0:
-					x: ( contours[0].nodes[0].expandedTo[1].x + contours[1].nodes[0].expandedTo[0].x ) * 0.5 + thickness / 80 * 23.5 - 0.5 * (85 / 80 * thickness * opticThickness) + (width - 1) * 5
+					x: ( contours[0].nodes[0].expandedTo[1].x + contours[1].nodes[0].expandedTo[0].x ) * 0.5 + thickness / 80 * 23.5 - 0.5 * (85 / 80 * thickness * opticThickness) + (width - 1) * ( 5 / 80 ) * thickness
 					y: 0
 					typeOut: "line"
 					expand: Object({
-						width: (85 / 80 * thickness * opticThickness) + (width - 1) * 5
+						width: (85 / 80 * thickness * opticThickness) + (width - 1) * ( 5 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.5
 					})
@@ -87,20 +87,20 @@ exports.glyphs['M_cap'] =
 			closed: false
 			nodes:
 				1:
-					x: contours[1].nodes[1].expandedTo[0].x + (contours[1].nodes[1].expand.width - thickness / 80 * 53) * contrast - 0.5 * (88 / 80 * thickness * opticThickness) * contrast + (width - 1) * 5
+					x: contours[1].nodes[1].expandedTo[0].x + (contours[1].nodes[1].expand.width - thickness / 80 * 53) * contrast - 0.5 * (88 / 80 * thickness * opticThickness) * contrast + (width - 1) * ( 5 / 80 ) * thickness
 					y: capHeight
 					typeOut: "line"
 					expand: Object({
-						width: (85 / 80 * thickness * opticThickness) * contrast + (width - 1) * 5
+						width: (85 / 80 * thickness * opticThickness) * contrast + (width - 1) * ( 5 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.5
 					})
 				0:
-					x: contours[2].nodes[0].expandedTo[0].x + 38 * thickness / 80 + 0.5 * (85 / 80 * thickness * opticThickness) + (width - 1) * 5
+					x: contours[2].nodes[0].expandedTo[0].x + 38 * thickness / 80 + 0.5 * (85 / 80 * thickness * opticThickness) + (width - 1) * ( 5 / 80 ) * thickness
 					y: 0
 					typeOut: "line"
 					expand: Object({
-						width: (85 / 80 * thickness * opticThickness) * contrast + (width - 1) * 5
+						width: (85 / 80 * thickness * opticThickness) * contrast + (width - 1) * ( 5 / 80 ) * thickness
 						angle: 0 + 'deg'
 						distr: 0.5
 					})

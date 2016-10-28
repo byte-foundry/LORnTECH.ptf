@@ -61,7 +61,10 @@ exports.glyphs['B_cap'] =
 						distr: 0
 					})
 				2:
-					x: contours[1].nodes[1].x + (92/80 * thickness * 0.75) + 119 + 12 * (width - 1) / 2 - Math.sin(Math.max(0, (thickness - 80) / 3) / 180 * Math.PI) * 81/80 * thickness * opticThickness * contrast
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 200 * width + 220 - (20),
+						contours[0].nodes[0].expandedTo[1].x + 0.25 + contours[1].nodes[2].expand.width + 10
+					)
 					y: (contours[1].nodes[1].expandedTo[0].y + contours[1].nodes[3].expandedTo[0].y) / 2
 					dirOut: 270 + 'deg'
 					expand: Object({
@@ -76,16 +79,20 @@ exports.glyphs['B_cap'] =
 					expand: Object({
 						width: thickness * opticThickness * contrast / Math.cos(3 / 180 * Math.PI)
 						angle: 87 + 'deg'
-						distr: 0.25
+						distr: 0.5
 					})
 				4:
 					x: contours[0].nodes[0].expandedTo[1].x + Math.min(59, (59/80 * thickness)) + 12 * (width - 1)
-					y: contours[0].nodes[1].y - (contours[0].nodes[1].y / 1.9)
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 140 * width,
+						contours[0].nodes[0].expandedTo[1].x + 60
+					)
+					y: capHeight / 2
 					dirIn: 0 + 'deg'
 					expand: Object({
 						width: thickness * opticThickness * contrast
 						angle: 90 + 'deg'
-						distr: 0.25
+						distr: 0.5
 					})
 		2:
 			skeleton: true
@@ -98,7 +105,7 @@ exports.glyphs['B_cap'] =
 					expand: Object({
 						width: thickness * opticThickness * contrast
 						angle: -90 + 'deg'
-						distr: 0.75
+						distr: 0.5
 					})
 				1:
 					x: contours[2].nodes[0].x + 111 - Math.sin(8 / 180 * Math.PI) * thickness * opticThickness * contrast + 126 * (width - 1)
@@ -107,10 +114,13 @@ exports.glyphs['B_cap'] =
 					expand: Object({
 						width: thickness * opticThickness * contrast / Math.cos(8 / 180 * Math.PI)
 						angle: -82 + 'deg'
-						distr: 0.75
+						distr: 0.5
 					})
 				2:
-					x: contours[2].nodes[3].x + (87/80 * thickness * 0.75) + 119 + 12 * (width - 1) / 2
+					x: Math.max(
+						contours[0].nodes[0].expandedTo[0].x + 200 * width + 260 - (20),
+						contours[0].nodes[0].expandedTo[1].x + 0.25 + contours[2].nodes[2].expand.width + 10
+					)
 					y: contours[1].nodes[3].expandedTo[1].y / 2
 					dirOut: 270 + 'deg'
 					expand: Object({
