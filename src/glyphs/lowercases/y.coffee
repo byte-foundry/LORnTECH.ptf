@@ -66,7 +66,7 @@ exports.glyphs['y'] =
 						distr: 1
 					})
 				2:
-					x: contours[0].nodes[0].expandedTo[0].x + 30 + Math.min((descender + 300) * Math.sin(Math.atan2(0 - descender, contours[0].nodes[0].expandedTo[0].x + 30 + (descender + 300) - contours[1].nodes[1].expandedTo[0].x)), 0) - Math.max((thickness / 80 - 1) * 80, 0)
+					x: contours[0].nodes[0].expandedTo[0].x + 30 + Math.min((descender + 300) * Math.sin(Math.atan2(0 - descender, contours[0].nodes[0].expandedTo[0].x + 30 + (descender + 300) - contours[1].nodes[1].expandedTo[0].x)), 0) - Math.max((thickness / 80 - 1) * 80, 0) - Math.max(0, (500 - xHeight) / 500 * 300)
 					y: descender
 					dirIn: Utils.lineAngle( contours[1].nodes[2].expandedTo[0].point, contours[1].nodes[1].expandedTo[1].point )
 					# tensionIn: 0
