@@ -36,7 +36,7 @@ exports.glyphs['a'] =
 					})
 				1:
 					x: spacingLeft + (29/80) * thickness
-					y: ( - overshoot + thickness ) + ( (contours[0].nodes[0].y - 0.75 * ( 75 / 80 ) * thickness) - ( - overshoot + thickness ) ) * 0.45 + baseLine
+					y: ( contours[0].nodes[2].y + thickness ) + ( (contours[0].nodes[0].y - 0.75 * ( 75 / 80 ) * thickness) - ( contours[0].nodes[2].y + thickness ) ) * 0.45
 					tensionIn: 1.15
 					type: 'smooth'
 					dirOut: - 90 + 'deg'
@@ -47,7 +47,7 @@ exports.glyphs['a'] =
 					})
 				2:
 					x: contours[0].nodes[1].x + (contours[1].nodes[1].x - contours[0].nodes[1].x) / 2 - 15
-					y: 0 + baseLine - overshoot
+					y: 0 - overshoot + baseLine
 					dirOut: 0 + 'deg'
 					type: 'smooth'
 					expand: Object({
